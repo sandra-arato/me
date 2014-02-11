@@ -8,27 +8,39 @@ http://colorschemedesigner.com/#3m62rhTT9w0w0
 */
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two);
 
 body {
 	font-family: "Lato", sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 h1 {
-
+	font-family: "Lato", sans-serif;
+	font-size: 1.5em;
+	margin: 0;
 }
 
 h2 {
-
+	font-family: "Shadows Into Light Two", sans-serif;
+	padding-left: 2em;
 }
 
 h3 {
-	padding: 
+	padding-left: 0.8em;
+	font-size: 1.4em;
+	line-height: 0.7em;
+	margin-bottom: 0;
+	margin-top: 1.4em;
+	font-weight: 300;
+	letter-spacing: 1.4px;
+
 }
 
 p {
 	letter-spacing: 0.7px;
 	line-height: 1.23em;
+	margin: 0;
 }
 
 .clearfix:after {
@@ -51,12 +63,53 @@ p {
 	z-index: 10000;
 }
 
-#profile img.me {
-	width: 150px;
+#profile img {
+	display: inline-block;
+	float: left;
+	width: 160px;
+	padding-left: 2em;
 }
 
-#profile img {
-	width: 220px;
+.intro {
+	position: relative;
+	height: 390px;
+	margin: 0;
+	font-family: "Shadows Into Light Two", sans-serif;
+}
+
+.intro:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 390px;
+	z-index: -1;
+	background: url("../image/me.jpg") top no-repeat;
+	background-size: cover;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.intro p, h1 {
+	text-align: right;
+	margin-right: 46px;
+	line-height: 1.5;
+}
+
+.intro span {
+	display: inline-block;
+	margin-top: 2.5em;
+	color: #E77D69;
+	font-size: 1.8em;
+	margin-right: 20px;
+}
+
+.skills p {
+	display: inline;
+	margin: 1em;
 }
 
 #portfolio {
@@ -64,6 +117,7 @@ p {
 	width: 70%;
 	float: right;
 	top: 0;
+	background-color: #eaeddd;
 }
 
 .port nav {
@@ -74,7 +128,7 @@ p {
 	text-align: justify;
 	-ms-text-justify: distribute-all-lines;
 	text-justify: distribute-all-lines;
-	background-color: rgba(210, 179, 135, 0.4);
+	background-color: #E0E4CC;
 	border-bottom: 1px solid rgba(210, 179, 135, 0.6);
 	z-index: 5000;
 }
@@ -88,9 +142,8 @@ p {
 
 .port nav a {
 	text-decoration:  none;
-	padding: 1.2em 0.8em 1em 0.8em;
+	padding: 1.2em 0.8em 1em 1em;
 	font-weight: 300;
-	font-size: 1.2em;
 	color: #ffffff;
 }
 
@@ -120,7 +173,6 @@ p {
 	height: 180px;
 	float: right;
 	box-sizing: border-box;
-	background: rgb(105,211,231);
 }
 
 .summary img {
@@ -147,7 +199,7 @@ p {
 }
 
 .summary ul strong {
-	color: #C64340;
+	color: #228496;
 	font-weight: 700;
 }
 
@@ -169,10 +221,11 @@ p {
 .description {
 	width: 62%;
 	height: 180px;
-	background-color: #E4FDAF;
+	background-color: #eaeddd;
 }
 
 .description p {
-	padding: 0.8em;
+	padding: 1.2em;
+	padding-left: 
 }
 
