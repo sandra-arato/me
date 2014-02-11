@@ -1,0 +1,178 @@
+/* 
+
+color scheme 1 
+http://colorschemedesigner.com/#2Q62rlKoTw0w0
+color scheme 2
+http://colorschemedesigner.com/#3m62rhTT9w0w0
+
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic);
+
+body {
+	font-family: "Lato", sans-serif;
+	font-size: 14px;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+	padding: 
+}
+
+p {
+	letter-spacing: 0.7px;
+	line-height: 1.23em;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+#profile {
+	display: inline-block;
+	width: 30%;
+	float: left;
+	z-index: 10000;
+}
+
+#profile img.me {
+	width: 150px;
+}
+
+#profile img {
+	width: 220px;
+}
+
+#portfolio {
+	display: inline-block;
+	width: 70%;
+	float: right;
+	top: 0;
+}
+
+.port nav {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding-top: 20px;
+	text-align: justify;
+	-ms-text-justify: distribute-all-lines;
+	text-justify: distribute-all-lines;
+	background-color: rgba(210, 179, 135, 0.4);
+	border-bottom: 1px solid rgba(210, 179, 135, 0.6);
+	z-index: 5000;
+}
+
+.stretch {
+	width: 100%;
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+}
+
+.port nav a {
+	text-decoration:  none;
+	padding: 1.2em 0.8em 1em 0.8em;
+	font-weight: 300;
+	font-size: 1.2em;
+	color: #ffffff;
+}
+
+.port nav a:hover {
+	background-color: #ffffff;
+	color: #FFB671;
+}
+
+#project div {
+	margin: 0;
+}
+
+.screenshot {
+	width: 100%;
+	height: 450px;
+	background: url("../image/project2_scr1.png") top no-repeat;
+	background-size: cover;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.summary {
+	position: relative;
+	/*bottom: 170px;*/
+	width: 38%;
+	height: 180px;
+	float: right;
+	box-sizing: border-box;
+	background: rgb(105,211,231);
+}
+
+.summary img {
+	display: inline-block;
+	width: 80px;
+	padding: 8px;
+	margin: 0;
+}
+
+.summary ul, .summary .tags ul {
+	display: inline-block;
+	margin: 0.7em 0 0 0.7em;
+	padding: 0;
+	vertical-align: top;
+	list-style: none;
+	font-size: 1.2em;
+	word-spacing: 3px;
+	letter-spacing: 0.9px;
+}
+
+.summary ul span {
+	color: #4E2699;
+	font-size: 1em;
+}
+
+.summary ul strong {
+	color: #C64340;
+	font-weight: 700;
+}
+
+.summary div.tags {
+	margin: 0 0 0 12px;	
+}
+
+.summary .tags ul {
+	display: block;
+	margin: 0;	
+}
+
+.summary .tags li {
+	display: inline;
+	font-size: 0.8em;
+	padding: 0;
+}
+
+.description {
+	width: 62%;
+	height: 180px;
+	background-color: #E4FDAF;
+}
+
+.description p {
+	padding: 0.8em;
+}
+
