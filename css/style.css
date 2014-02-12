@@ -66,9 +66,10 @@ p {
 
 #profile {
 	display: inline-block;
-	width: 30%;
+	width: 22%;
 	float: left;
 	z-index: 10000;
+	box-shadow: 2px 1px 4px #c2ca9a;
 }
 
 .intro {
@@ -90,10 +91,10 @@ p {
 }
 
 .intro div:first-child {
-	height: 300px;
+	height: 240px;
 	background: url("../image/me.jpg") center no-repeat;
 	background-size: 110%;
-	background-position: -10px -130px;
+	background-position: -10px -100px;
 	border-bottom: 1px solid #FFB671;
 	line-height: 2.5em;
 	overflow: hidden;
@@ -119,12 +120,54 @@ p {
 	background-color: #ffffff;
 }
 
+.skills img {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 40%;
+	padding-left: 1em;
+}
+
+.skills p {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 50%;
+	float: right;
+	padding-right: 1em;
+	padding-top: 0;
+}
+
+#timeline {
+	display: inline-block;
+	width: 8%;
+	float: left;
+	z-index: 10000;
+}
+
+#timeline div {
+	text-transform: uppercase;
+	width: 78%;
+	margin: 20px auto;
+	padding: 4px 0;
+	background-color: #69d3e7;
+	color: #ffffff;
+	text-align: center;
+	font-weight: 400;
+}
+
+#timeline .line {
+	width: 2px;
+	height: 540px;
+	background-color: #69d3e7;
+	margin: 0 auto;
+}
+
 #portfolio {
 	display: inline-block;
 	width: 70%;
 	float: right;
 	top: 0;
 	background-color: #eaeddd;
+	box-shadow: -2px -1px 4px #c2ca9a;
 }
 
 .port nav {
@@ -175,7 +218,6 @@ p {
 
 .summary {
 	position: relative;
-	/*bottom: 170px;*/
 	width: 38%;
 	height: 180px;
 	float: right;
