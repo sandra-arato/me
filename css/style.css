@@ -10,9 +10,18 @@ http://colorschemedesigner.com/#3m62rhTT9w0w0
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two);
 
-body {
-	font-family: "Lato", sans-serif;
-	font-size: 16px;
+@media all {
+	body {
+		font-family: "Lato", sans-serif;
+		font-size: 16px;
+		background-color: #eaeddd;
+	}
+}
+
+@media (max-width: 990px) {
+	body {
+		font-size: 14px;
+	}
 }
 
 h1 {
@@ -70,6 +79,7 @@ p {
 	float: left;
 	z-index: 10000;
 	box-shadow: 2px 1px 4px #c2ca9a;
+	background-color: #ffffff;
 }
 
 .intro {
@@ -91,21 +101,15 @@ p {
 }
 
 .intro div:first-child {
-	height: 240px;
+	height: 15em;
 	background: url("../image/me.jpg") center no-repeat;
 	background-size: 110%;
-	background-position: -10px -100px;
+	background-position: -0.625em -6.25em;
 	border-bottom: 1px solid #FFB671;
 	line-height: 2.5em;
 	overflow: hidden;
 	text-indent: 100%;
 	white-space: nowrap;
-	/*-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);*/
-	/*padding-bottom: 14px;*/
 }
 
 .intro img {
@@ -120,16 +124,17 @@ p {
 	background-color: #ffffff;
 }
 
-.skills img {
+.skills img, p {
 	display: inline-block;
 	box-sizing: border-box;
+}
+
+.skills img {
 	width: 40%;
 	padding-left: 1em;
 }
 
 .skills p {
-	display: inline-block;
-	box-sizing: border-box;
 	width: 50%;
 	float: right;
 	padding-right: 1em;
@@ -146,19 +151,40 @@ p {
 #timeline div {
 	text-transform: uppercase;
 	width: 78%;
-	margin: 20px auto;
-	padding: 4px 0;
+	margin: 0.8em auto 1.4em auto;
+	padding-top: 1em;
+	padding-bottom: 0;
 	background-color: #69d3e7;
 	color: #ffffff;
 	text-align: center;
 	font-weight: 400;
+	border-radius: 3px;
+}
+
+#timeline div:first-child:after {
+	position: relative;
+	top: 38px;
+	content: "";
+	line-height: 0;
+	margin-top: 1em;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid  #69d3e7;
 }
 
 #timeline .line {
 	width: 2px;
-	height: 540px;
+	height: 440px;
 	background-color: #69d3e7;
 	margin: 0 auto;
+}
+
+#timeline div:last-child {
+	margin-top: 0.8em;
+	padding-bottom: 1em;
+	background-color: #FFB671;
 }
 
 #portfolio {
@@ -192,7 +218,7 @@ p {
 
 .port nav a {
 	text-decoration:  none;
-	padding: 1.2em 0.8em 1em 1em;
+	padding: 1.2em 0.8em 1.2em 1em;
 	font-weight: 300;
 	color: #ffffff;
 }
@@ -209,19 +235,50 @@ p {
 .screenshot {
 	width: 100%;
 	height: 450px;
-	background: url("../image/project2_scr1.png") top no-repeat;
+	background: url("../image/project1_scr1.png") top no-repeat;
 	background-size: cover;
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
 }
 
+.description {
+	display: inline-block;
+	float: left;
+	width: 62%;
+	height: 180px;
+	background-color: #eaeddd;
+}
+
+.description p {
+	padding: 1.2em;
+	padding-left: 
+}
+
 .summary {
-	position: relative;
 	width: 38%;
 	height: 180px;
 	float: right;
 	box-sizing: border-box;
+}
+
+.summary button {
+	width: 100%;
+	background: url("../image/github.png") no-repeat;
+	background-size: 20%;
+	background-position: 0.8em 0.7em;
+	text-align: left;
+	padding: 24px 0;
+	padding-left: 30%;
+	border: none;
+	background-color: #CCD2AB;
+
+}
+
+button a {
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #000;
 }
 
 .summary img {
@@ -231,50 +288,43 @@ p {
 	margin: 0;
 }
 
-.summary ul, .summary .tags ul {
+.summary ul {
+	padding: 0;
+}
+
+.js, .css, .html {
+	box-sizing:border-box;
+	width: 7em;
+	height: 4.3em;
+	margin: 0 0.2em;
+	text-align: center;
+	padding-top: 1.7em;
+}
+
+.js {
+	background: url("../image/js-logo.png") no-repeat;
+	background-size: 30%;
+	background-position: 0.3em 0.7em;
+}
+
+.css {
+	background: url("../image/css-logo.png") no-repeat;
+	background-size: 30%;
+	background-position: 0.3em 0.7em;
+}
+
+.html {
+	background: url("../image/html-logo.png") no-repeat;
+	background-size: 30%;
+	background-position: 0.3em 0.7em;
+}
+
+.summary li {
 	display: inline-block;
-	margin: 0.7em 0 0 0.7em;
-	padding: 0;
 	vertical-align: top;
-	list-style: none;
-	font-size: 1.2em;
-	word-spacing: 3px;
-	letter-spacing: 0.9px;
 }
 
-.summary ul span {
-	color: #4E2699;
-	font-size: 1em;
-}
-
-.summary ul strong {
-	color: #228496;
-	font-weight: 700;
-}
-
-.summary div.tags {
-	margin: 0 0 0 12px;	
-}
-
-.summary .tags ul {
-	display: block;
-	margin: 0;	
-}
-
-.summary .tags li {
-	display: inline;
+.tags li {
 	font-size: 0.8em;
-	padding: 0;
-}
-
-.description {
-	width: 62%;
-	height: 180px;
-	background-color: #eaeddd;
-}
-
-.description p {
-	padding: 1.2em;
-	padding-left: 
 }
 
