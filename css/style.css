@@ -21,6 +21,10 @@ h1 {
 	margin: 0;
 	letter-spacing: 4px;
 	word-spacing: 3px;
+	line-height: 1.15;
+	color: #4e2699;
+	padding-top: 0.4em;
+	padding-bottom: 0.23em;
 }
 
 h2 {
@@ -69,38 +73,15 @@ p {
 
 .intro {
 	width: 100%;
-	/*height: 255px;*/
 	margin-bottom: 0;
 	text-align: center;
 	font-family: "Shadows Into Light Two", sans-serif;
 }
 
-.intro div {
-	position: relative;
-	width: 100%;
-	height: 280px;
-	background: url("../image/me.jpg") no-repeat;
-	background-size: cover;
-	background-position: -24px -48px;
-	border-bottom: 1px solid #FFB671;
-	-webkit-filter: blur(2px);
-	-moz-filter: blur(2px);
-	-o-filter: blur(2px);
-	-ms-filter: blur(2px);
-	filter: blur(2px);
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	z-index: -1;
-}
-
 .intro span {
 	display: block;
-	padding-top: 2em;
-	padding-bottom: 6.6em;
-	font-size: 1.8em;
-	letter-spacing: 0.2em;
-	/*color: #CEFB6F;*/
+	letter-spacing: 0.1em;
+	line-height: 1.2;
 
 }
 
@@ -108,19 +89,28 @@ p {
 	letter-spacing: 1.9px;
 }
 
-.intro p:first-child {
+.intro div:first-child {
+	height: 300px;
 	background: url("../image/me.jpg") center no-repeat;
 	background-size: 110%;
-	background-position: -10px -50px;
+	background-position: -10px -130px;
 	border-bottom: 1px solid #FFB671;
 	line-height: 2.5em;
-	padding-bottom: 14px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	/*-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);*/
+	/*padding-bottom: 14px;*/
 }
 
 .intro img {
 	width: 120px;
 	height: 120px;
-	margin-top: -40px;
+	margin-top: -60px;
 	border-radius: 60px;
 	border: 4px solid #FFB671;
 }
