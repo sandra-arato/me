@@ -1,7 +1,7 @@
 /* 
 
 color scheme 1 
-http://colorschemedesigner.com/#2Q62rlKoTw0w0
+http://www.colorhexa.com/e0e4cc
 color scheme 2
 http://colorschemedesigner.com/#3m62rhTT9w0w0
 
@@ -24,6 +24,37 @@ http://colorschemedesigner.com/#3m62rhTT9w0w0
 		font-size: 14px;
 	}
 }
+
+@keyframes skillset-html {
+	from {width: 1%;}
+	to {width: 67%;}
+}
+
+@-webkit-keyframes skillset-html {
+	from {width: 1%;}
+	to {width: 67%;}
+}
+
+@keyframes skillset-css {
+	from {width: 1%;}
+	to {width: 55%;}
+}
+
+@-webkit-keyframes skillset-css {
+	from {width: 1%;}
+	to {width: 55%;}
+}
+
+@keyframes skillset-js {
+	from {width: 1%;}
+	to {width: 72%;}
+}
+
+@-webkit-keyframes skillset-js {
+	from {width: 1%;}
+	to {width: 72%;}
+}
+
 
 h1 {
 	font-family: "Lato", sans-serif;
@@ -136,26 +167,34 @@ p {
 .skills div {
 	background-image: none;
 	height: 2.1em;
-	margin-left: 1.2em;
+	margin-left: 1.8em;
 	padding: 0.6em 0 0 0.4em;
 	text-align: left;
 	color: #ffffff;
+	font-weight: 300;
 }
 
 .skills div.html {
 	width: 67%;
 	background-color: #FFB671;
-	margin-top: 1.2em;
+	margin-top: 1em;
+	animation: skillset-html 2s cubic-bezier(0.350, 0.380, 0.550, 1.175);
+	-webkit-animation: skillset-html 2s cubic-bezier(0.350, 0.380, 0.550, 1.175);
 }
 
 .skills div.css {
 	width: 55%;
 	background-color: #9e75eb;
+	animation: skillset-css 1.4s cubic-bezier(0.535, 0.235, 0.550, 1.175);
+	-webkit-animation: skillset-css 1.4s cubic-bezier(0.535, 0.235, 0.550, 1.175);
 }
 
 .skills div.js {
 	width: 72%;
 	background-color: #cefb6f;
+	animation: skillset-js 2.4s cubic-bezier(0.535, 0.235, 0.550, 1.175);
+	-webkit-animation: skillset-js 2.4s cubic-bezier(0.535, 0.235, 0.550, 1.175);
+
 }
 
 .skills p {
@@ -275,11 +314,14 @@ p {
 	font-weight: 300;
 	color: #ffffff;
 	line-height: 3em;
+	transition: background-color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	-webkit-transition: background-color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000)	
 }
 
 .port nav a.active{
 	background-color: #ffffff;
 	color: #FFB671;
+	border-bottom: 2px solid #FFB671;
 }
 
 .port nav a:hover {
@@ -291,7 +333,7 @@ p {
 	margin: 0;
 }
 
-#project div:after{
+#project:before{
 	content:'';
 	display:block;
 	box-shadow: 0 -6px 6px #777;
@@ -327,27 +369,34 @@ p {
 
 .summary {
 	width: 38%;
-	height: 180px;
+	/*height: 180px;*/
 	float: right;
 	box-sizing: border-box;
+	padding-right: 1em;
 }
 
 .summary button {
+	box-sizing: border-box;
 	width: 100%;
-	background: url("../image/github.png") no-repeat;
-	background-size: 20%;
-	background-position: 0.8em 0.7em;
 	text-align: left;
 	padding: 24px 0;
-	padding-left: 30%;
-	border: none;
-	background-color: #CCD2AB;
+	padding-left: 25%;
+	color: #ccd2ab;
+	background: url("../image/github.png") no-repeat;
+	background-size: 18%;
+	background-position: 0.8em 0.7em;
+	background-color: #fefefe;
+	border: 2px solid #FFB671;
+	border-top: none;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	box-shadow: 2px 1px 7px #d6dbbb;
 }
 
 button a {
 	text-decoration: none;
 	font-size: 1.2em;
-	color: #000;
+	color: #69d3e7;
 }
 
 button span {
@@ -356,44 +405,47 @@ button span {
 
 .summary button:hover {
 	cursor: pointer;
-	background-color: #ffffff;
-}
-
-.summary img {
-	display: inline-block;
-	width: 80px;
-	padding: 8px;
-	margin: 0;
+	background-color: #ccd2ab;
+	color: #ffffff;
+	border-color: #ccd2ab;
 }
 
 .summary ul {
 	padding: 0;
+	margin: 0;
+}
+
+#codecount, .tags span {
+	display: inline-block;
+	margin: 1em 0 0 1em;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 3px;
+	word-spacing: 2px;
 }
 
 .js, .css, .html {
-	box-sizing:border-box;
-	width: 7em;
-	height: 4.3em;
-	margin: 0 0.2em;
+	margin: 0 0.4em;
 	text-align: center;
-	padding-top: 1.7em;
+	padding: 1.7em 0 0.6em 2.6em;
 }
 
 .js {
+	margin-left: 1.6em;
 	background: url("../image/js-logo.png") no-repeat;
-	background-size: 30%;
+	background-size: 32px;
 	background-position: 0.3em 0.7em;
 }
 
 .css {
 	background: url("../image/css-logo.png") no-repeat;
-	background-size: 30%;
+	background-size: 32px;
 	background-position: 0.3em 0.7em;
 }
 
 .html {
 	background: url("../image/html-logo.png") no-repeat;
-	background-size: 30%;
+	background-size: 32px;
 	background-position: 0.3em 0.7em;
 }
 
@@ -404,5 +456,6 @@ button span {
 
 .tags li {
 	font-size: 0.8em;
+	margin: 1em 0 0 2em;
 }
 
