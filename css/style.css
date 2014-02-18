@@ -78,9 +78,9 @@ p {
 	display: inline-block;
 	width: 22%;
 	float: left;
-	z-index: 10000;
-	box-shadow: 2px 1px 4px #c2ca9a;
+	/*box-shadow: 2px 1px 4px #c2ca9a;*/
 	background-color: #ffffff;
+	z-index: 750;
 }
 
 .intro {
@@ -132,13 +132,13 @@ p {
 	background-color: #ffffff;
 }
 
-.skills img, p {
+.skills img, .skills p {
 	display: block;
 	text-align: center;
 	margin: 0 auto;
 	box-sizing: border-box;
 	font-size: 0.8em;
-	padding-top: 0.8em;
+	padding: 0.8em 1.4em 0 1.4em;
 }
 
 .skills img {
@@ -146,21 +146,35 @@ p {
 }
 
 .skills p:last-child {
-	line-height: 1.17;
+	line-height: 1.3;
 	text-align: left;
-	padding: 0.8em 1.2em 2em 2.4em;
+	padding: 0.8em 1.2em 1.2em 2.4em;
 }
 
 .skills span {
+	display: block;
+	width: 100%;
+	margin: 0.5em 0;
+	padding: 0.3em 0;
 	text-transform: uppercase;
-	color: 
+	background-color: #69d3e7;
+	color: #ffffff;
+	font-weight: 300;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 2px;
+	font-size: 1.4em;
+}
+
+.skills span:hover {
+	background-color: #FFB671;
 }
 
 #timeline {
 	display: inline-block;
 	width: 8%;
 	float: left;
-	z-index: 10000;
+	z-index: 1000;
 }
 
 #timeline div {
@@ -193,7 +207,7 @@ p {
 
 #timeline .line {
 	width: 2px;
-	height: 440px;
+	height: 452px;
 	background-color: #69d3e7;
 	margin: 0 auto;
 }
@@ -205,11 +219,11 @@ p {
 
 #portfolio {
 	display: inline-block;
-	width: 70%;
+	/*width: 70%;*/
+	width: 78%;
 	float: right;
 	top: 0;
 	background-color: #eaeddd;
-	box-shadow: -2px -1px 4px #c2ca9a;
 }
 
 .port nav {
@@ -221,7 +235,7 @@ p {
 	text-justify: distribute-all-lines;
 	background-color: #E0E4CC;
 	border-bottom: 1px solid rgba(210, 179, 135, 0.6);
-	z-index: 5000;
+	z-index: 500;
 }
 
 .stretch {
@@ -239,16 +253,31 @@ p {
 	font-weight: 300;
 	color: #ffffff;
 	line-height: 3em;
-	background-color: red;
 }
 
-.port nav a:hover {
+.port nav a.active{
 	background-color: #ffffff;
 	color: #FFB671;
 }
 
+.port nav a:hover {
+	background-color: #ffffff;
+	color: #c2ca9a;
+}
+
 #project div {
 	margin: 0;
+}
+
+#project div:after{
+	content:'';
+	display:block;
+	box-shadow: 0 5px 6px #777 inset;
+	position: absolute;
+	top:0;
+	left:22%;
+	width:78%;
+	height:100%;
 }
 
 .screenshot {
@@ -291,7 +320,6 @@ p {
 	padding-left: 30%;
 	border: none;
 	background-color: #CCD2AB;
-
 }
 
 button a {
