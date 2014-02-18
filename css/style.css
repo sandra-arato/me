@@ -15,6 +15,7 @@ http://colorschemedesigner.com/#3m62rhTT9w0w0
 		font-family: "Lato", sans-serif;
 		font-size: 16px;
 		background-color: #eaeddd;
+		/*background-color: #ffffff;*/
 	}
 }
 
@@ -78,9 +79,9 @@ p {
 	display: inline-block;
 	width: 22%;
 	float: left;
-	/*box-shadow: 2px 1px 4px #c2ca9a;*/
 	background-color: #ffffff;
 	z-index: 750;
+	box-shadow: 1px 0px 6px #222;
 }
 
 .intro {
@@ -132,17 +133,38 @@ p {
 	background-color: #ffffff;
 }
 
-.skills img, .skills p {
+.skills div {
+	background-image: none;
+	height: 2.1em;
+	margin-left: 1.2em;
+	padding: 0.6em 0 0 0.4em;
+	text-align: left;
+	color: #ffffff;
+}
+
+.skills div.html {
+	width: 67%;
+	background-color: #FFB671;
+	margin-top: 1.2em;
+}
+
+.skills div.css {
+	width: 55%;
+	background-color: #9e75eb;
+}
+
+.skills div.js {
+	width: 72%;
+	background-color: #cefb6f;
+}
+
+.skills p {
 	display: block;
 	text-align: center;
 	margin: 0 auto;
 	box-sizing: border-box;
 	font-size: 0.8em;
 	padding: 0.8em 1.4em 0 1.4em;
-}
-
-.skills img {
-	width: 40%;
 }
 
 .skills p:last-child {
@@ -272,11 +294,11 @@ p {
 #project div:after{
 	content:'';
 	display:block;
-	box-shadow: 0 5px 6px #777 inset;
+	box-shadow: 0 -6px 6px #777;
 	position: absolute;
 	top:0;
-	left:22%;
-	width:78%;
+	left:0;
+	width:22%;
 	height:100%;
 }
 
@@ -326,6 +348,15 @@ button a {
 	text-decoration: none;
 	font-size: 1.2em;
 	color: #000;
+}
+
+button span {
+	display: block;
+}
+
+.summary button:hover {
+	cursor: pointer;
+	background-color: #ffffff;
 }
 
 .summary img {
