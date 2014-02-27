@@ -14,7 +14,7 @@ http://colorschemedesigner.com/#3m62rhTT9w0w0
 	body {
 		font-family: "Lato", sans-serif;
 		font-size: 16px;
-		background-color: #eaeddd;
+		/*background-color: #eaeddd;*/
 		/*background-color: #ffffff;*/
 	}
 }
@@ -108,11 +108,12 @@ p {
 
 #profile {
 	display: inline-block;
+	position: fixed;
 	width: 22%;
 	float: left;
 	background-color: #ffffff;
 	z-index: 750;
-	box-shadow: 1px 0px 6px #222;
+	box-shadow: 1px 0px 6px #777;
 }
 
 .intro {
@@ -288,8 +289,8 @@ p {
 }
 
 .port nav {
-	position: relative;
-	width: 100%;
+	position: fixed;
+	width: 78%;
 	height: 3em; /* temporary fix */
 	text-align: justify;
 	-ms-text-justify: distribute-all-lines;
@@ -329,25 +330,18 @@ p {
 	color: #c2ca9a;
 }
 
-#project div {
-	margin: 0;
+.project {
+	margin-top: 48px;
 }
 
-#project:before{
-	content:'';
-	display:block;
-	box-shadow: 0 -6px 6px #777;
-	position: absolute;
-	top:0;
-	left:0;
-	width:22%;
-	height:100%;
+.project div {
+	margin: 0;
 }
 
 .screenshot {
 	width: 100%;
-	height: 450px;
-	background: url("../image/project1_scr1.png") top no-repeat;
+	height: 600px;
+	background: url("../image/project1.png") top no-repeat;
 	background-size: cover;
 	text-indent: 100%;
 	white-space: nowrap;
@@ -373,6 +367,7 @@ p {
 	float: right;
 	box-sizing: border-box;
 	padding-right: 1em;
+	padding-bottom: 3em;
 }
 
 .summary button {
@@ -415,7 +410,7 @@ button span {
 	margin: 0;
 }
 
-#codecount, .tags span {
+.codecount, .tags span {
 	display: inline-block;
 	margin: 1em 0 0 1em;
 	text-transform: uppercase;
