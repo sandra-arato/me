@@ -57,8 +57,75 @@ projects = [
 	}
 ]
 
-function renderProjects() {
+function activateProjectNav (current) {
+	// console.log("in activating No. " + current);
+	$("a.active").removeClass();
+	current++;
+	var currentLink = "a:nth-child(" + current + ")";
+	console.log(currentLink)
+	$(currentLink).addClass("active");
+}
 
+
+function scrollHandler (e) {
+	var scrollUp = window.pageYOffset; 
+
+	var isScrolledToBottom = $("#container").height() == (scrollUp + $(window).height());
+	var imageCount = projects.length;
+	var visibleProjects = [];
+
+	// search for visible items based on rendered position:
+
+	for (var i = 0; i < imageCount; i++) {
+		var currentPos = $("#project"+i).position();
+		var currentTop = currentPos.top;
+		var currentHeight = $("#project" + i).height();
+		var currentBottom = currentTop + currentHeight;
+
+		var visible = ( !(currentBottom-scrollUp < 0 && currentTop-scrollUp < 0) &&
+			!( currentBottom > (scrollUp + $(window).height()) && currentTop > (scrollUp + $(window).height()) ) );
+
+		if (visible) {
+			var currentImg = {
+				"index": i, 
+				"top": currentTop, 
+				"bottom": currentBottom, 
+				"scrollTop": scrollUp, 
+				"scrollBottom": (scrollUp + $(window).height())
+			};
+			visibleProjects.push(currentImg);
+		}
+
+	}
+
+	// search for maximum visibility amongst visible items only:
+
+	var maxPercentage = 0;
+	var maxIndex = -1;
+	for (var j = 0, len = visibleProjects.length; j < len; j++) {
+		var height = $("#project" + visibleProjects[j].index).height();
+		var percentagePos = (visibleProjects[j].scrollBottom - visibleProjects[j].top) / height;
+		var percentageNeg = (visibleProjects[j].bottom - visibleProjects[j].scrollTop) / height;
+
+		var percentage = 0;
+
+		if (percentageNeg < percentagePos) {
+			percentage = percentageNeg;
+		} 
+		else {
+			percentage = percentagePos;
+		};
+
+		if (percentage > maxPercentage) {
+			maxPercentage = percentage;
+			maxIndex = visibleProjects[j].index;
+		};
+	};
+
+	activateProjectNav(maxIndex);
+}
+
+function renderProjects() {
 
 	for (var i = 0, len = projects.length; i < len; i++) {
 		var projectDiv = document.createElement("div");
@@ -108,7 +175,8 @@ function renderProjects() {
 
 
 function initialize() {
-	renderProjects();	
+	renderProjects();
+	$(window).scroll(scrollHandler);
 }
 
 $(document).ready(initialize);
