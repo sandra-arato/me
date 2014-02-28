@@ -338,14 +338,16 @@ p {
 	margin: 0;
 }
 
-.screenshot {
+div.last {
 	width: 100%;
-	height: 600px;
-	background: url("../image/project1.png") top no-repeat;
-	background-size: cover;
-	text-indent: 100%;
-	white-space: nowrap;
+	height: 360px;
+	content: ".";
 	overflow: hidden;
+	text-indent: 100%;
+}
+
+.project img {
+	box-shadow: 0 -4px 16px #ccd2ab;
 }
 
 .description {
@@ -363,11 +365,10 @@ p {
 
 .summary {
 	width: 38%;
-	/*height: 180px;*/
 	float: right;
 	box-sizing: border-box;
 	padding-right: 1em;
-	padding-bottom: 3em;
+	padding-bottom: 2em;
 }
 
 .summary button {
