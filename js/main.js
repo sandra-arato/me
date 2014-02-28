@@ -59,10 +59,18 @@ var projects = [
 
 function keyboardNav (e) {
 	if ( e.keyCode == 39 || e.keyCode == 40) {
-		$("a.active").next().click();
+		if ($("a.active").next()) {
+			$("a.active").next().click();
+		};
 	}
 	else if ( e.keyCode == 37 || e.keyCode == 38) {
-		$("a.active").prev().click();
+		if ($("a.active").prev()) {
+			$("a.active").prev().click();
+			if ($(".active").attr("id") === "project1") {
+				$("#project0").scrollTo();
+			};
+		};
+		
 	}
 }
 
@@ -73,10 +81,17 @@ function smoothScroll () {
 				var target = $(this.hash);
 				target = target.length ? target : $("[name=" + this.hash.slice(1) +"]");
 				if (target.length) {
+					if (target[0].id === "project0") {
+						$("html,body").animate({
+							scrollTop: target.offset().top+48,
+							easing: "easeOutBack"
+						}, 300);
+						return false;
+					};
 					$("html,body").animate({
-						scrollTop: target.offset().top+120
-						// easing: "easeOutElastic"
-					}, 300);
+						scrollTop: target.offset().top+200,
+						easing: "easeOutBack"
+					}, 370);
 					return false;
 				}
 			}
@@ -151,6 +166,21 @@ function scrollHandler (e) {
 	activateProjectNav(maxIndex);
 }
 
+function checkOverflow(el) {
+
+	var curOverflow = el.style.overflow;
+
+	if ( !curOverflow || curOverflow === "visible" ) {
+		el.style.overflow = "hidden";
+	}
+
+	var isOverflowing = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
+	console.log("el.clientHeight", el.clientHeight, "el.scrollHeight", el.scrollHeight);
+	el.style.overflow = curOverflow;
+	return isOverflowing;
+}
+
+
 function handleScrollEvents () {
 	$(window).scroll(scrollHandler);
 	smoothScroll();
@@ -158,8 +188,8 @@ function handleScrollEvents () {
 	$(document).scrollsnap({
 		snaps: ".project",
 		offset: 200,
-		easing: "easeInCubic",
-		proximity: 360,
+		easing: "easeOutBack",
+		proximity: 220,
 		duration: 600
 	})
 }
