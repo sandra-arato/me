@@ -102,6 +102,9 @@ p {
 	display: inline-block;
 }
 
+/* <<<<<<<<<<<<<<< PROFILE >>>>>>>>>>>>>>> */
+
+
 #profile {
 	display: inline-block;
 	position: fixed;
@@ -201,6 +204,7 @@ p {
 	text-align: center;
 	margin: 0 auto;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
 	font-size: 0.8em;
 	padding: 0.8em 1.4em 0 1.4em;
 }
@@ -276,6 +280,8 @@ p {
 	margin-top: 0.8em;
 	background-color: #FFB671;
 }
+
+/* <<<<<<<<<<<<<<< PORTFOLIO STYLING >>>>>>>>>>>>>>> */
 
 #portfolio {
 	display: inline-block;
@@ -365,12 +371,14 @@ div.last {
 	width: 38%;
 	float: right;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
 	padding-right: 1em;
 	padding-bottom: 2em;
 }
 
 .summary button {
 	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
 	width: 100%;
 	text-align: left;
 	padding: 24px 0;
@@ -453,6 +461,89 @@ button span {
 	margin: 1em 0 0 2em;
 }
 
+/* <<<<<<<<<<<<<<< FOOTER AND CONTACT FORM >>>>>>>>>>>>>>> */
+
+
+footer {
+	width: 78%;
+	float: right;
+	background-color: #66a2ad;
+	color: #ffffff;
+	font-weight: 300;
+	padding-bottom: 3em;
+}
+
+
+form h2 {
+	letter-spacing: 1.9px;
+}
+
+form h3 {
+	font-size: 2em;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+}
+
+form div {
+	width: 100%;
+	float: left;
+	padding-left: 2em;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
+}
+
+form div:last-child {
+	margin-top: 1.2em;
+}
+
+form .col1:first-child {
+	margin-top: 1.2em;
+}
+
+form div p {
+	display: block;
+	float: left;
+	/*width: 60%;*/
+	padding-top: 6px;
+	margin-top: 0.4em;
+}
+
+form input {
+	display: block;
+	margin-top: 4px;
+}
+
+form textarea {
+	margin-top: 1.8em;
+	height: 10.4em;
+	width: 100%;
+	text-transform: uppercase;
+	padding-top: 0.8em;
+	padding-left: 0.4em;
+	color: #000000;
+}
+
+.col2 {
+	margin-left: 10px;
+}
+
+#send-mail {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
+	width: 94%;
+	position: relative;
+	top: 14px;
+	padding: 0.6em 0;
+	margin-left: 2em;
+	color: #ffffff;
+	background-color: #FFB671;
+	text-transform: uppercase;
+	border: none;
+}
+
+/* <<<<<<<<<<<<<<< MEDIA QUERIES >>>>>>>>>>>>>>> */
+
+
 @media (min-height: 676px) {
 	.intro img {
 		width: 120px;
@@ -488,6 +579,12 @@ button span {
 
 	.skills div {
 		border-width: 26px;
+	}
+}
+
+@media (min-width: 700px) {
+	form div {
+		width: 48%;
 	}
 }
 
