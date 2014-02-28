@@ -1,6 +1,6 @@
-projects = [
+var projects = [
 	{
-		title: "Infinty Gallery",
+		title: "Infinity Gallery",
 		description: "The page gathers the best 75 shots from last year, and shows where it was taken. The styled Google Map on the left updates for each photo, based on the visibility of the current photo. The geoloaction is pulled from a JSON that was generated for the photos. I also used a lazy loading library because the desired photo sizes made the page load a bit slow. Upgrade ideas include sharing individual photos via Facebook or bookmarking the position of the current photo.",
 		url: "http://sandraszenti.github.io/friendlocator",
 		code: [23, 193, 43],
@@ -57,12 +57,38 @@ projects = [
 	}
 ]
 
+function keyboardNav (e) {
+	if ( e.keyCode == 39 || e.keyCode == 40) {
+		$("a.active").next().click();
+	}
+	else if ( e.keyCode == 37 || e.keyCode == 38) {
+		$("a.active").prev().click();
+	}
+}
+
+function smoothScroll () {
+	$(function() {
+		$("a[href*=#]:not([href=#])").click(function() {
+			if (location.pathname.replace(/^\//,"") == this.pathname.replace(/^\//,"") && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $("[name=" + this.hash.slice(1) +"]");
+				if (target.length) {
+					$("html,body").animate({
+						scrollTop: target.offset().top+120
+						// easing: "easeOutElastic"
+					}, 300);
+					return false;
+				}
+			}
+		});
+	});
+}
+
+
 function activateProjectNav (current) {
-	// console.log("in activating No. " + current);
 	$("a.active").removeClass();
 	current++;
 	var currentLink = "a:nth-child(" + current + ")";
-	console.log(currentLink)
 	$(currentLink).addClass("active");
 }
 
@@ -125,16 +151,29 @@ function scrollHandler (e) {
 	activateProjectNav(maxIndex);
 }
 
+function handleScrollEvents () {
+	$(window).scroll(scrollHandler);
+	smoothScroll();
+	$(document).keydown(function (e) { keyboardNav(e); } );
+	$(document).scrollsnap({
+		snaps: ".project",
+		offset: 200,
+		easing: "easeInCubic",
+		proximity: 360,
+		duration: 600
+	})
+}
+
 function renderProjects() {
 
 	for (var i = 0, len = projects.length; i < len; i++) {
 		var projectDiv = document.createElement("div");
 		$(projectDiv).attr("id", "project"+i).addClass("project");
 
-		var img = document.createElement("div");
+		var img = document.createElement("img");
 		var im = i+1;
 		console.log(im);
-		$(img).addClass("screenshot").css("background-image", "url(image/project" + im + ".png)");
+		$(img).attr("src", "image/project" + im + ".png").css("width", "100%");
 		$(img).appendTo($(projectDiv));
 
 		var desc = document.createElement("div");
@@ -144,26 +183,27 @@ function renderProjects() {
 
 		var summ = document.createElement("div");
 		var sumtext = (
-			"<button>"+
-					"<a href='http://google.com' target='_blank'>See the live project on GitHub</a>"+
-					"<span>Opens in a new tab</span>"+
-				"</button>"+
-				"<span class='codecount'>line counter</span>"+
-				"<ul>"+
-					"<li class='js'>" + projects[i].code[0] + "</strong></li>"+
-					"<li class='css'>" + projects[i].code[1] + "</li>"+
-					"<li class='html'>" + projects[i].code[2] + "</li>" +
-				"</ul>"+
-				"<div class='tags'>"+
-					"<span>Keywords</span>"+
-					"<ul>"+
-						"<li>Google Maps</li>"+
-						"<li>Lazy loading</li>"+
-						"<li>Responsive</li>"+
-						"<li>IE8+</li>"+
-						"<li class='stretch'></li>"+
-					"</ul>"+
-				"</div>") /* JS compiles the whitespaces strangely */
+			"<button> \
+					<a href='http://google.com' target='_blank'>See the live project on GitHub</a> \
+					<span>Opens in a new tab</span></button> \
+				</button> \
+				<span class='codecount'>line counter</span> \
+				<ul> \
+					<li class='js'>" + projects[i].code[0] + "</strong></li> \
+					<li class='css'>" + projects[i].code[1] + "</li> \
+					<li class='html'>" + projects[i].code[2] + "</li> \
+				</ul> \
+				<div class='tags'> \
+					<span>Keywords</span> \
+					<ul> \
+						<li>Google Maps</li> \
+						<li>Lazy loading</li> \
+						<li>Responsive</li> \
+						<li>IE8+</li> \
+						<li class='stretch'></li> \
+					</ul> \
+				</div>");
+
 		$(summ)
 			.html(sumtext)
 			.addClass("summary");
@@ -171,12 +211,16 @@ function renderProjects() {
 
 		$(projectDiv).appendTo($("#portfolio"));
 	};
+
+	var lastDiv = document.createElement("div");
+	$(lastDiv).html(".").addClass("project last clearfix").appendTo($(projectDiv));
+	$("#project0").removeClass("project");
 }
 
 
 function initialize() {
 	renderProjects();
-	$(window).scroll(scrollHandler);
+	handleScrollEvents();
 }
 
 $(document).ready(initialize);
