@@ -43,7 +43,7 @@ http://colorschemedesigner.com/#3m62rhTT9w0w0
 
 body {
 	font-family: "Lato", sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	background-color: #eaeddd;
 }
 
@@ -110,11 +110,12 @@ p {
 	flex-direction: column;
 	justify-content: space-between;
 	position: fixed;
-	width: 22%;
+	width: 8em;
 	height: 100%;
 	background-color: #ffffff;
 	z-index: 750;
 	box-shadow: 1px 0px 6px #777;
+	visibility: hidden;
 }
 
 .intro {
@@ -231,16 +232,15 @@ div.ping {
 	text-transform: uppercase;
 	color: #ffffff;
 	cursor: pointer;
-	flex: 3 2 auto;
+	flex: 4 1 auto;
 	/*background-color: red;*/
 }
 
 .ping span {
 	display: block;
 	position: relative;
-	/*top: -1.3em;*/
 	width: 100%;
-	height: 100%;
+	height: 3em;
 	padding: 0.6em 0 0.8em 0;
 	background-color: #69d3e7;
 	font-weight: 300;
@@ -297,7 +297,7 @@ div.ping {
 #portfolio {
 	display: inline-block;
 	/*width: 70%;*/
-	width: 78%;
+	width: 100%;
 	float: right;
 	top: 0;
 	background-color: #eaeddd;
@@ -306,14 +306,16 @@ div.ping {
 
 .port nav {
 	position: fixed;
-	width: 78%;
-	height: 3em; /* temporary fix */
+	float: right;
+	width: 100%;
+	/*height: 3em;  temporary fix */
 	text-align: justify;
 	-ms-text-justify: distribute-all-lines;
 	text-justify: distribute-all-lines;
 	background-color: #E0E4CC;
 	border-bottom: 1px solid rgba(210, 179, 135, 0.6);
 	z-index: 500;
+	/*overflow: visible;*/
 }
 
 .stretch {
@@ -477,7 +479,7 @@ button span {
 
 
 footer {
-	width: 78%;
+	width: 100%;
 	float: right;
 	background-color: #66a2ad;
 	color: #ffffff;
@@ -485,6 +487,10 @@ footer {
 	padding-bottom: 3em;
 }
 
+form {
+	width: 90%;
+	margin: 0 auto;
+}
 
 form h2 {
 	letter-spacing: 1.9px;
@@ -497,32 +503,30 @@ form h3 {
 }
 
 form div {
-	width: 100%;
-	float: left;
-	padding-left: 2em;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box; /* Firefox */
+	width: 100%;
+	float: left;
 }
 
-form div:last-child {
-	margin-top: 1.2em;
-}
-
-form .col1:first-child {
+form div.col1 {
 	margin-top: 1.2em;
 }
 
 form div p {
 	display: block;
 	float: left;
-	/*width: 60%;*/
 	padding-top: 6px;
-	margin-top: 0.4em;
+	margin: 0.4em 3em 0 0;
 }
 
-form input {
+form input, form input.clearfix {
 	display: block;
 	margin-top: 4px;
+	width: 12.4em;
+	height: 2.6em;
+	padding-left: 0.6em;
+	color: #000000;
 }
 
 form textarea {
@@ -531,22 +535,22 @@ form textarea {
 	width: 100%;
 	text-transform: uppercase;
 	padding-top: 0.8em;
-	padding-left: 0.4em;
+	padding-left: 0.6em;
 	color: #000000;
 }
 
-.col2 {
-	margin-left: 10px;
+form input:focus, form textarea:focus {
+	background-color: #e4fdaf;
+	box-shadow: 0 0 4px #cefb6f;
 }
 
 #send-mail {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box; /* Firefox */
-	width: 94%;
+	width: 100%;
 	position: relative;
 	top: 14px;
 	padding: 0.6em 0;
-	margin-left: 2em;
 	color: #ffffff;
 	background-color: #FFB671;
 	text-transform: uppercase;
@@ -566,33 +570,44 @@ form textarea {
 	}
 }
 
-@media (min-height: 815px) {
+@media (min-width: 1024px) {
 	h2 {
-		display: block;
-		font-family: "Shadows Into Light Two", sans-serif;
 		font-size: 1.5em;
 		padding-top: 0.4em;
 		padding-left: 1em;
 		margin: 0;
+	}
+	
+	#profile {
+		width: 22%;
+		visibility: visible;
 	}
 
 	.intro p:last-child {
 		font-size: 1em;
 	}
 
+	#portfolio, footer, .port nav {
+		width: 78%;
+	}
+
+	form div.col1, form div.col2 {
+		width: 45%;
+		margin: 0 auto;
+	}
+
+	form textarea {
+		height: 13.3em;
+	}
+}
+
+@media (min-width: 1680px) {
+	body {
+		font-size: 16px;
+	}
+
 	.skills div {
 		border-width: 26px;
 	}
-}
 
-@media (min-width: 700px) {
-	form div {
-		width: 48%;
-	}
-}
-
-@media (max-width: 990px) {
-	body {
-		font-size: 14px;
-	}
 }
