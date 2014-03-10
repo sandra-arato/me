@@ -185,13 +185,6 @@ function handleScrollEvents () {
 	$(window).scroll(scrollHandler);
 	smoothScroll();
 	$(document).keydown(function (e) { keyboardNav(e); } );
-	$(document).scrollsnap({
-		snaps: ".project",
-		offset: 200,
-		easing: "easeOutBack",
-		proximity: 220,
-		duration: 600
-	})
 }
 
 function renderProjects() {
@@ -241,10 +234,6 @@ function renderProjects() {
 
 		$(projectDiv).appendTo($("#portfolio"));
 	};
-
-	var lastDiv = document.createElement("div");
-	$(lastDiv).html(".").addClass("project last clearfix").appendTo($(projectDiv));
-	$("#project0").removeClass("project");
 }
 
 
