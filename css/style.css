@@ -43,7 +43,7 @@ http://colorschemedesigner.com/#3m62rhTT9w0w0
 
 body {
 	font-family: "Lato", sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	background-color: #eaeddd;
 }
 
@@ -106,19 +106,26 @@ p {
 
 
 #profile {
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	position: fixed;
-	width: 22%;
+	width: 8em;
 	height: 100%;
 	float: left;
 	background-color: #ffffff;
 	z-index: 750;
 	box-shadow: 1px 0px 6px #777;
-	overflow: visible;
+	visibility: hidden;
 }
 
 .intro {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 100%;
+	min-height: 240px;
+	flex: 4 2 auto;
 	margin-bottom: 0;
 	text-align: center;
 	font-family: "Shadows Into Light Two", sans-serif;
@@ -128,7 +135,6 @@ p {
 	display: block;
 	letter-spacing: 0.1em;
 	line-height: 1.2;
-
 }
 
 .intro p:last-child {
@@ -138,7 +144,7 @@ p {
 }
 
 .intro div:first-child {
-	height: 8em; /* make it 4 if small screen */
+	height: 30%; /* make it 4 if small screen */
 	border-bottom: 1px solid #FFB671;
 	line-height: 2.5em;
 	overflow: hidden;
@@ -147,25 +153,29 @@ p {
 	background-color: rgba(207, 219, 132, 1);
 	/* IE9, iOS 3.2+ */
 	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiM2OWQzZTciIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2NlZmI2ZiIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjAuMzMxIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2ZmYjY3MiIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjAuOTMyOTk5OTk5OTk5OTk5OSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCN2c2dnKSIgLz48L3N2Zz4=);
-	background-image:
-		-webkit-gradient(linear, 0% 0%, 100% 100%,color-stop(0, rgb(105, 211, 231)),color-stop(0.331, rgb(206, 251, 111)),color-stop(0.933, rgb(255, 182, 114)));
-		/* Android 2.3 */
+	background-image: -webkit-gradient(linear, 0% 0%, 100% 100%,color-stop(0, rgb(105, 211, 231)),color-stop(0.331, rgb(206, 251, 111)),color-stop(0.933, rgb(255, 182, 114)));
+	/* Android 2.3 */
 	background-image: -webkit-linear-gradient(top left,rgb(105, 211, 231) 0%,rgb(206, 251, 111) 33.1%,rgb(255, 182, 114) 93.3%);
 	/* IE10+ */
 	background-image: linear-gradient(to bottom right,rgb(105, 211, 231) 0%,rgb(206, 251, 111) 33.1%,rgb(255, 182, 114) 93.3%);
 	background-image: -ms-linear-gradient(top left,rgb(105, 211, 231) 0%,rgb(206, 251, 111) 33.1%,rgb(255, 182, 114) 93.3%);
+	flex: 1 1 auto;
 }
 
 .intro img {
-	width: 96px;
-	height: 96px;
-	margin-top: -48px;
+	max-width: 96px;
+	max-height: 96px;
+	margin: -50px auto 0 auto;
 	border-radius: 48px;
 	border: 4px solid #FFB671;
+	flex: 2 2 auto;
 }
 
 .skills {
 	background-color: #ffffff;
+	/*background-color: green;*/
+	min-height: 330px;
+	flex: 4 4 auto;
 }
 
 .skills div {
@@ -197,7 +207,6 @@ p {
 	border-color: #cefb6f;
 	animation: skillset-js 2.4s cubic-bezier(0.535, 0.235, 0.550, 1.175);
 	-webkit-animation: skillset-js 2.4s cubic-bezier(0.535, 0.235, 0.550, 1.175);
-
 }
 
 .skills p {
@@ -216,8 +225,21 @@ p {
 	padding: 0.8em 1.2em 1.2em 2.4em;
 }
 
-.skills span {
+div.ping {
+	width: 90%;
+	min-height: 2.6em;
+	max-height: 50%;
+	margin: auto;
+	text-transform: uppercase;
+	color: #ffffff;
+	cursor: pointer;
+	flex: 4 1 auto;
+	/*background-color: red;*/
+}
+
+.ping span {
 	display: block;
+	position: relative;
 	width: 100%;
 	height: 3em;
 	line-height: 3em;
@@ -225,23 +247,13 @@ p {
 	padding: 0.3em 0;
 	text-transform: uppercase;
 	background-color: #69d3e7;
-	color: #ffffff;
 	font-weight: 300;
 	text-align: center;
-	cursor: pointer;
 	border-radius: 2px;
-	font-size: 1.4em;
 }
 
-.skills span:hover {
+.ping span:hover {
 	background-color: #FFB671;
-}
-
-#timeline {
-	display: inline-block;
-	width: 8%;
-	float: left;
-	z-index: 1000;
 }
 
 #timeline div {
@@ -289,22 +301,25 @@ p {
 #portfolio {
 	display: inline-block;
 	/*width: 70%;*/
-	width: 78%;
+	width: 100%;
 	float: right;
 	top: 0;
 	background-color: #eaeddd;
+	overflow: hidden;
 }
 
 .port nav {
 	position: fixed;
-	width: 78%;
-	height: 3em; /* temporary fix */
+	float: right;
+	width: 100%;
+	/*height: 3em;  temporary fix */
 	text-align: justify;
 	-ms-text-justify: distribute-all-lines;
 	text-justify: distribute-all-lines;
 	background-color: #E0E4CC;
 	border-bottom: 1px solid rgba(210, 179, 135, 0.6);
 	z-index: 500;
+	/*overflow: visible;*/
 }
 
 .stretch {
@@ -495,7 +510,7 @@ button span {
 
 
 footer {
-	width: 78%;
+	width: 100%;
 	float: right;
 	background-color: #66a2ad;
 	color: #ffffff;
@@ -503,6 +518,10 @@ footer {
 	padding-bottom: 3em;
 }
 
+form {
+	width: 90%;
+	margin: 0 auto;
+}
 
 form h2 {
 	letter-spacing: 1.9px;
@@ -515,32 +534,30 @@ form h3 {
 }
 
 form div {
-	width: 100%;
-	float: left;
-	padding-left: 2em;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box; /* Firefox */
+	width: 100%;
+	float: left;
 }
 
-form div:last-child {
-	margin-top: 1.2em;
-}
-
-form .col1:first-child {
+form div.col1 {
 	margin-top: 1.2em;
 }
 
 form div p {
 	display: block;
 	float: left;
-	/*width: 60%;*/
 	padding-top: 6px;
-	margin-top: 0.4em;
+	margin: 0.4em 3em 0 0;
 }
 
-form input {
+form input, form input.clearfix {
 	display: block;
 	margin-top: 4px;
+	width: 12.4em;
+	height: 2.6em;
+	padding-left: 0.6em;
+	color: #000000;
 }
 
 form textarea {
@@ -549,22 +566,22 @@ form textarea {
 	width: 100%;
 	text-transform: uppercase;
 	padding-top: 0.8em;
-	padding-left: 0.4em;
+	padding-left: 0.6em;
 	color: #000000;
 }
 
-.col2 {
-	margin-left: 10px;
+form input:focus, form textarea:focus {
+	background-color: #e4fdaf;
+	box-shadow: 0 0 4px #cefb6f;
 }
 
 #send-mail {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box; /* Firefox */
-	width: 94%;
+	width: 100%;
 	position: relative;
 	top: 14px;
 	padding: 0.6em 0;
-	margin-left: 2em;
 	color: #ffffff;
 	background-color: #FFB671;
 	text-transform: uppercase;
@@ -578,48 +595,50 @@ form textarea {
 	.intro img {
 		width: 120px;
 		height: 120px;
-		margin-top: -60px;
+		margin: -62px auto 0 auto;
 		border-radius: 60px;
 		border: 4px solid #FFB671;
 	}
 }
 
-
-@media (min-height: 815px) {
+@media (min-width: 1024px) {
 	h2 {
-		display: block;
-		font-family: "Shadows Into Light Two", sans-serif;
 		font-size: 1.5em;
 		padding-top: 0.4em;
 		padding-left: 1em;
 		margin: 0;
 	}
-
-	.intro img {
-		width: 120px;
-		height: 120px;
-		margin-top: -60px;
-		border-radius: 60px;
-		border: 4px solid #FFB671;
+	
+	#profile {
+		width: 22%;
+		visibility: visible;
 	}
 
 	.intro p:last-child {
 		font-size: 1em;
 	}
 
+	#portfolio, footer, .port nav {
+		width: 78%;
+	}
+
+	form div.col1, form div.col2 {
+		width: 45%;
+		margin: 0 auto;
+	}
+
+	form textarea {
+		height: 13.3em;
+	}
+}
+
+@media (min-width: 1680px) {
+	body {
+		font-size: 16px;
+	}
+
 	.skills div {
 		border-width: 26px;
 	}
-}
 
-@media (min-width: 700px) {
-	form div {
-		width: 48%;
-	}
-}
-
-@media (max-width: 990px) {
-	body {
-		font-size: 14px;
-	}
 }
