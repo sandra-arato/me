@@ -109,6 +109,7 @@ p {
 	display: inline-block;
 	position: fixed;
 	width: 22%;
+	height: 100%;
 	float: left;
 	background-color: #ffffff;
 	z-index: 750;
@@ -218,6 +219,8 @@ p {
 .skills span {
 	display: block;
 	width: 100%;
+	height: 3em;
+	line-height: 3em;
 	margin: 0.5em 0;
 	padding: 0.3em 0;
 	text-transform: uppercase;
@@ -459,6 +462,33 @@ button span {
 .tags li {
 	font-size: 0.8em;
 	margin: 1em 0 0 2em;
+}
+
+/* <<<<<<<<<<<<<<< RESUME >>>>>>>>>>>>>>> */
+
+.resume {
+	width: 78%;
+	float: right;
+	margin-top: 0;
+	padding-bottom: 3em;
+	background-color: #e3f5b8;
+	/* IE9, iOS 3.2+ */
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjZWFlZGRkIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNkYmZkOTMiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(234, 237, 221)),color-stop(1, rgb(219, 253, 147)));
+	/* Android 2.3 */
+	background-image: -webkit-linear-gradient(top,rgb(234, 237, 221) 0%,rgb(219, 253, 147) 100%);
+	/* IE10+ */
+	background-image: linear-gradient(to bottom,rgb(234, 237, 221) 0%,rgb(219, 253, 147) 100%);
+	background-image: -ms-linear-gradient(top,rgb(234, 237, 221) 0%,rgb(219, 253, 147) 100%);
+}
+
+.resume .col1, .resume .col2 {
+	display: inline-block;
+	width: 40%;
+	margin-top: 0;
+	margin-left: 2em;
+	padding-top: 1em;
+	vertical-align: top;
 }
 
 /* <<<<<<<<<<<<<<< FOOTER AND CONTACT FORM >>>>>>>>>>>>>>> */
