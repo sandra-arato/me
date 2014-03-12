@@ -65,6 +65,7 @@ var projects = [
 	}
 ]
 
+// this function makes it possible to navigate through the projects with only arrow keys
 function keyboardNav (e) {
 	if ( e.keyCode == 39 || e.keyCode == 40) {
 		if ($("a.active").next()) {
@@ -107,7 +108,7 @@ function smoothScroll () {
 	});
 }
 
-
+// when a project is visible, its nav equivalent gets activated by this function
 function activateProjectNav (current) {
 	$("a.active").removeClass();
 	current++;
@@ -115,7 +116,7 @@ function activateProjectNav (current) {
 	$(currentLink).addClass("active");
 }
 
-
+// this function keeps track of which project/element is currently visible in the viewport
 function scrollHandler (e) {
 	var scrollUp = window.pageYOffset; 
 
@@ -124,7 +125,6 @@ function scrollHandler (e) {
 	var visibleProjects = [];
 
 	// search for visible items based on rendered position:
-
 	for (var i = 0; i < imageCount; i++) {
 		var currentPos = $("#project"+i).position();
 		var currentTop = currentPos.top;
@@ -148,7 +148,6 @@ function scrollHandler (e) {
 	}
 
 	// search for maximum visibility amongst visible items only:
-
 	var maxPercentage = 0;
 	var maxIndex = -1;
 	for (var j = 0, len = visibleProjects.length; j < len; j++) {
@@ -174,6 +173,7 @@ function scrollHandler (e) {
 	activateProjectNav(maxIndex);
 }
 
+// I might use this function later to see if flex-box profile elements are not blocking eachother out
 function checkOverflow(el) {
 
 	var curOverflow = el.style.overflow;
@@ -197,7 +197,12 @@ function handleScrollEvents () {
 
 function renderProjects() {
 
+	// creates Project divs for each project based on JSON above.
+	// could have used a templating solution as well, it pretty much does the same thing.
+	// maybe I'll change it to a template later. like handlebars or sg.
+
 	for (var i = 0, len = projects.length; i < len; i++) {
+
 		var projectDiv = document.createElement("div");
 		$(projectDiv).attr("id", "project"+i).addClass("project clearfix");
 
@@ -216,12 +221,14 @@ function renderProjects() {
 
 		var summ = document.createElement("div");
 		var sumtext = (
-			"<span class='codecount'>line counter</span> \
-			<ul> \
-				<li class='js'>" + projects[i].code[0] + "</strong></li> \
-				<li class='css'>" + projects[i].code[1] + "</li> \
-				<li class='html'>" + projects[i].code[2] + "</li> \
-			</ul> \
+			"<div class='codecount'> \
+				<span>line counter</span> \
+				<ul> \
+					<li class='js'>" + projects[i].code[0] + "</strong></li> \
+					<li class='css'>" + projects[i].code[1] + "</li> \
+					<li class='html'>" + projects[i].code[2] + "</li> \
+				</ul> \
+			</div> \
 			<div class='tags'> \
 				<span>Keywords</span> \
 				<ul> \
@@ -232,22 +239,32 @@ function renderProjects() {
 					<li class='stretch'></li> \
 				</ul> \
 			</div>");
-		$(summ)
-			.html(sumtext)
-			.addClass("summary");
+		$(summ).html(sumtext).addClass("summary");
+
 		$([img, gitLink, gitLinkAfter, desc, summ]).appendTo($(projectDiv));
-
-
 		$(projectDiv).appendTo($("#portfolio"));
 	};
 }
 
 
 function initialize() {
+	// fill index.html with portfolio projects
 	renderProjects();
+
+	// setup Github stickers on projects
 	Sticker.init(".project a");
-	$(".project a").hover(function() {$(this).next().css("visibility", "visible");}, function() {$(this).next().css("visibility", "hidden");});
+
+	// display text above Github sticker on hover
+	$(".project a").hover(
+		function() {$(this).next().css("visibility", "visible");}, 
+		function() {$(this).next().css("visibility", "hidden");});
 	handleScrollEvents();
+
+	// when email me button is clicked, it scrolls to the form 
+	$(".ping span").click(function() {
+		$("html,body").animate({scrollTop:$(document).height()}, 300);
+		e.preventDefault();
+	});
 }
 
 $(document).ready(initialize);
