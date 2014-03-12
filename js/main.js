@@ -205,7 +205,10 @@ function renderProjects() {
 		$(img).attr("src", projects[i].screenshot).css("width", "100%");
 
 		var gitLink = document.createElement("a");
-		$(gitLink).attr("href", projects[i].url).html("<img src='image/github.png'> View project on GitHub");
+		$(gitLink).attr("href", projects[i].url).addClass("sticker");
+		var gitLinkAfter = document.createElement("span")
+		$(gitLinkAfter).html("view source on GitHub");
+
 
 		var desc = document.createElement("div");
 		$(desc).html("<h3>" + projects[i].title + "</h3><p>" + projects[i].description + "</p>").addClass("description");	
@@ -232,7 +235,7 @@ function renderProjects() {
 		$(summ)
 			.html(sumtext)
 			.addClass("summary");
-		$([img, gitLink, desc, summ]).appendTo($(projectDiv));
+		$([img, gitLink, gitLinkAfter, desc, summ]).appendTo($(projectDiv));
 
 
 		$(projectDiv).appendTo($("#portfolio"));
@@ -242,6 +245,8 @@ function renderProjects() {
 
 function initialize() {
 	renderProjects();
+	Sticker.init(".project a");
+	$(".project a").hover(function() {$(this).next().css("visibility", "visible");}, function() {$(this).next().css("visibility", "hidden");});
 	handleScrollEvents();
 }
 
