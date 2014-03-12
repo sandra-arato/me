@@ -90,13 +90,6 @@ function smoothScroll () {
 				var target = $(this.hash);
 				target = target.length ? target : $("[name=" + this.hash.slice(1) +"]");
 				if (target.length) {
-					if (target[0].id === "project0") {
-						$("html,body").animate({
-							scrollTop: target.offset().top+48,
-							easing: "easeOutBack"
-						}, 300);
-						return false;
-					};
 					$("html,body").animate({
 						scrollTop: target.offset().top-64,
 						easing: "easeOutBack"
@@ -110,10 +103,14 @@ function smoothScroll () {
 
 // when a project is visible, its nav equivalent gets activated by this function
 function activateProjectNav (current) {
+	$("a.previous").removeClass();
 	$("a.active").removeClass();
+	var prevLink = "a:nth-child(" + current + ")";
+	$(prevLink).addClass("previous");
 	current++;
 	var currentLink = "a:nth-child(" + current + ")";
 	$(currentLink).addClass("active");
+
 }
 
 // this function keeps track of which project/element is currently visible in the viewport
