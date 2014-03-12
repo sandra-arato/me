@@ -374,33 +374,49 @@ div.last {
 	text-indent: 100%;
 }
 
+.project img {
+	position: relative;
+	z-index: 0;
+}
+
 .project a {
 	display: block;
-	width: 4.6em;
-	height: 4.6em;
+	width: 60px;
+	height: 60px;
 	margin-top: -5.4em;
-	padding-left: 0.8em;
-	overflow: hidden;
-	color: #c4c;
-	text-transform: uppercase;
+	margin-left: 0.6em;
 	text-decoration: none;
-	letter-spacing: 1.2px;
 }
 
-.project a img {
-	width: 4em;
-	/*background-color: #c4c;*/
-	padding: 0.3em;
-	/*border-radius: 2px;*/
+.project a .sticker-img {
+	background: #ffffff url("../image/github.png") no-repeat 3px 2px;
+	background-size: 54px;
 }
 
-.project a img:hover {
-	background-color: transparent;
+.project a + span {
+	display: block;
+	width: 180px;
+	position: relative;
+	top: -94px;
+	margin-left: 1.6em;
+	line-height: 2em;
+	height: 2em;
+	padding-left: 8px;
+	background-color: rgba(250, 250, 250, 0.75);
+	visibility: hidden;
 }
 
-.project a:hover {
-	width: 28em;
+.project a + span:after {
+	display: block;
+	position: relative;
+	content: "";
+	width: 0;
+	height: 0;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+	border-top: 8px solid rgba(250, 250, 250, 0.75);
 }
+
 
 .description {
 	display: inline-block;
@@ -421,7 +437,6 @@ div.last {
 	-moz-box-sizing: border-box; /* Firefox */
 	padding-right: 1em;
 	padding-bottom: 2em;
-	margin-top: -2em;
 }
 
 .summary ul {
@@ -431,11 +446,12 @@ div.last {
 
 .codecount, .tags span {
 	display: inline-block;
-	margin: 1em 0 0 1em;
+	margin: 1.3em 0 0.4em 1em;
 	text-transform: uppercase;
 	font-weight: 300;
 	letter-spacing: 3px;
 	word-spacing: 2px;
+	padding-top: 3px;
 }
 
 .js, .css, .html {
@@ -598,6 +614,10 @@ form input:focus, form textarea:focus {
 		border-radius: 60px;
 		border: 4px solid #FFB671;
 	}
+}
+
+@media (min-width:  795px) {
+
 }
 
 @media (min-width: 1024px) {
