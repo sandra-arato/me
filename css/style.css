@@ -240,8 +240,8 @@ div.ping {
 	display: block;
 	position: relative;
 	width: 100%;
-	height: 3em;
-	line-height: 3em;
+	height: 1em;
+	line-height: 1em;
 	margin: 0.5em 0;
 	padding: 0.3em 0;
 	text-transform: uppercase;
@@ -389,7 +389,7 @@ div.last {
 }
 
 .project a .sticker-img {
-	background: #ffffff url("../image/github.png") no-repeat 3px 2px;
+	background: #ffffff url("../image/github.png") no-repeat 3px 3px;
 	background-size: 54px;
 }
 
@@ -433,7 +433,6 @@ div.last {
 	vertical-align: top;
 }
 .summary ul {
-	/*display: inline-block;*/
 	padding: 0;
 	margin: 0;
 }
@@ -607,6 +606,10 @@ form input:focus, form textarea:focus {
 		margin: -62px auto 0 auto;
 		border-radius: 60px;
 		border: 4px solid #FFB671;
+	}
+	.ping span {
+		height: 3em;
+		line-height: 3em;
 	}
 }
 
