@@ -240,8 +240,8 @@ div.ping {
 	display: block;
 	position: relative;
 	width: 100%;
-	height: 3em;
-	line-height: 3em;
+	height: 1em;
+	line-height: 1em;
 	margin: 0.5em 0;
 	padding: 0.3em 0;
 	text-transform: uppercase;
@@ -389,7 +389,7 @@ div.last {
 }
 
 .project a .sticker-img {
-	background: #ffffff url("../image/github.png") no-repeat 3px 2px;
+	background: #ffffff url("../image/github.png") no-repeat 3px 3px;
 	background-size: 54px;
 }
 
@@ -417,34 +417,27 @@ div.last {
 	border-top: 8px solid rgba(250, 250, 250, 0.75);
 }
 
-
-.description {
-	display: inline-block;
-	float: left;
-	width: 62%;
-}
-
 .description p {
 	padding: 1.2em;
-	padding-left: 
 }
 
 .summary {
-	display: inline-block;
-	width: 38%;
-	float: right;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box; /* Firefox */
 	padding-right: 1em;
 	padding-bottom: 2em;
 }
 
+.codecount, .tags {
+	display: inline-block;
+	vertical-align: top;
+}
 .summary ul {
 	padding: 0;
 	margin: 0;
 }
 
-.codecount, .tags span {
+.codecount span, .tags span {
 	display: inline-block;
 	margin: 1.3em 0 0.4em 1em;
 	text-transform: uppercase;
@@ -614,10 +607,24 @@ form input:focus, form textarea:focus {
 		border-radius: 60px;
 		border: 4px solid #FFB671;
 	}
+	.ping span {
+		height: 3em;
+		line-height: 3em;
+	}
 }
 
 @media (min-width:  795px) {
+	.summary {
+		display: inline-block;
+		width: 38%;
+		float: right;
+	}
 
+	.description {
+		display: inline-block;
+		float: left;
+		width: 62%;
+	}
 }
 
 @media (min-width: 1024px) {
