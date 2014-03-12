@@ -299,7 +299,6 @@ div.ping {
 
 #portfolio {
 	display: inline-block;
-	/*width: 70%;*/
 	width: 100%;
 	float: right;
 	top: 0;
@@ -329,7 +328,7 @@ div.ping {
 }
 
 .port nav a {
-	display: inline-block;
+	display: none;
 	text-decoration:  none;
 	padding: 0 1em;
 	font-weight: 300;
@@ -343,6 +342,11 @@ div.ping {
 	background-color: #ffffff;
 	color: #FFB671;
 	border-bottom: 2px solid #FFB671;
+	display: inline-block;
+}
+
+nav a.active + a, nav a.previous {
+	display: inline-block;
 }
 
 .port nav a:hover {
@@ -351,11 +355,11 @@ div.ping {
 }
 
 #project0 {
-	margin-top: 7em;
+	margin-top: 6.5em;
 }
 
 div.project {
-	margin: 1.8em 4em;
+	margin: 1.8em;
 	background-color: #ffffff;
 	padding: 0.6em;
 	border: 1px solid #d6dbbb;
@@ -625,9 +629,13 @@ form input:focus, form textarea:focus {
 		float: left;
 		width: 62%;
 	}
+
+	div.project {
+		margin: 1.8em 4em;
+	}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1099px) {
 	h2 {
 		font-size: 1.5em;
 		padding-top: 0.4em;
@@ -648,6 +656,10 @@ form input:focus, form textarea:focus {
 		width: 78%;
 	}
 
+	.port nav a {
+		display: inline-block;
+	}
+
 	form div.col1, form div.col2 {
 		width: 45%;
 		margin: 0 auto;
@@ -658,7 +670,7 @@ form input:focus, form textarea:focus {
 	}
 }
 
-@media (min-width: 1680px) {
+@media (min-width: 1399px) {
 	body {
 		font-size: 16px;
 	}
