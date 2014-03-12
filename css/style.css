@@ -417,34 +417,28 @@ div.last {
 	border-top: 8px solid rgba(250, 250, 250, 0.75);
 }
 
-
-.description {
-	display: inline-block;
-	float: left;
-	width: 62%;
-}
-
 .description p {
 	padding: 1.2em;
-	padding-left: 
 }
 
 .summary {
-	display: inline-block;
-	width: 38%;
-	float: right;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box; /* Firefox */
 	padding-right: 1em;
 	padding-bottom: 2em;
 }
 
+.codecount, .tags {
+	display: inline-block;
+	vertical-align: top;
+}
 .summary ul {
+	/*display: inline-block;*/
 	padding: 0;
 	margin: 0;
 }
 
-.codecount, .tags span {
+.codecount span, .tags span {
 	display: inline-block;
 	margin: 1.3em 0 0.4em 1em;
 	text-transform: uppercase;
@@ -617,7 +611,17 @@ form input:focus, form textarea:focus {
 }
 
 @media (min-width:  795px) {
+	.summary {
+		display: inline-block;
+		width: 38%;
+		float: right;
+	}
 
+	.description {
+		display: inline-block;
+		float: left;
+		width: 62%;
+	}
 }
 
 @media (min-width: 1024px) {
