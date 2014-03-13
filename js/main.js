@@ -65,6 +65,45 @@ var projects = [
 	}
 ]
 
+function animateMenuButton () {
+
+
+	if ($("#profile").css("display") === "none") {
+		console.log("showing");
+		$("#profile").css("display", "flex");
+		$("#profile").animate({
+			"width": "240px",
+		}, {
+			duration: 300,
+			queue: false
+		});
+		$("#portfolio").animate({
+			"left": "240px"
+		}, {
+			duration: 300,
+			queue: false
+		});
+		$("#me-menu").css("background-color", "#000000");
+	}
+	else {
+		$("#portfolio").animate({
+			"left": "0"
+		}, {
+			duration: 100,
+			queue: false
+		});
+		$("#profile").animate({
+			"width": "0",
+		}, {
+			duration: 300,
+			queue: false
+		});
+		$("#profile").css("display", "none");
+		$("#me-menu").css("background-color", "#FFB671");
+
+	}
+}
+
 // this function makes it possible to navigate through the projects with only arrow keys
 function keyboardNav (e) {
 	if ( e.keyCode == 39 || e.keyCode == 40) {
@@ -105,10 +144,10 @@ function smoothScroll () {
 function activateProjectNav (current) {
 	$("a.previous").removeClass();
 	$("a.active").removeClass();
-	var prevLink = "a:nth-child(" + current + ")";
+	var prevLink = "a:nth-of-type(" + current + ")";
 	$(prevLink).addClass("previous");
 	current++;
-	var currentLink = "a:nth-child(" + current + ")";
+	var currentLink = "a:nth-of-type(" + current + ")";
 	$(currentLink).addClass("active");
 
 }
@@ -117,7 +156,7 @@ function activateProjectNav (current) {
 function scrollHandler (e) {
 	var scrollUp = window.pageYOffset; 
 
-	var isScrolledToBottom = $("#container").height() == (scrollUp + $(window).height());
+	// var isScrolledToBottom = $("#container").height() == (scrollUp + $(window).height());
 	var imageCount = projects.length;
 	var visibleProjects = [];
 
@@ -262,6 +301,8 @@ function initialize() {
 		$("html,body").animate({scrollTop:$(document).height()}, 300);
 		e.preventDefault();
 	});
+
+	$("#me-menu").click(animateMenuButton);
 }
 
 $(document).ready(initialize);
