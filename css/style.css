@@ -41,6 +41,7 @@ http://colorschemedesigner.com/#3m62rhTT9w0w0
 	to {width: 72%;}
 }
 
+
 body {
 	font-family: "Lato", sans-serif;
 	font-size: 14px;
@@ -106,17 +107,16 @@ p {
 
 
 #profile {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: space-between;
 	position: fixed;
-	width: 8em;
+	width: 0;
 	height: 100%;
 	float: left;
 	background-color: #ffffff;
 	z-index: 750;
 	box-shadow: 1px 0px 6px #777;
-	visibility: hidden;
 }
 
 .intro {
@@ -255,6 +255,9 @@ div.ping {
 	background-color: #FFB671;
 }
 
+/* <<<<<<<<<<<<<<< Time line >>>>>>>>>>>>>>> */
+/* might not need it after all */
+
 #timeline div {
 	text-transform: uppercase;
 	width: 78%;
@@ -267,7 +270,6 @@ div.ping {
 	font-weight: 400;
 	border-radius: 3px;
 }
-
 
 #timeline span:before {
 	position: relative;
@@ -295,10 +297,11 @@ div.ping {
 	background-color: #FFB671;
 }
 
-/* <<<<<<<<<<<<<<< PORTFOLIO STYLING >>>>>>>>>>>>>>> */
+/* <<<<<<<<<<<<<<< PROFILE >>>>>>>>>>>>>>> */
 
 #portfolio {
 	display: inline-block;
+	position: relative;
 	width: 100%;
 	float: right;
 	top: 0;
@@ -306,16 +309,27 @@ div.ping {
 	overflow: hidden;
 }
 
+#profile, #portfolio, #me-menu {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/* <<<<<<<< Navigation >>>>>>>> */
+
 .port nav {
 	position: fixed;
 	float: right;
 	width: 100%;
-	height: 3em;  /* temporary fix */
+	height: 3em;
 	text-align: justify;
 	-ms-text-justify: distribute-all-lines;
 	text-justify: distribute-all-lines;
 	background-color: #E0E4CC;
 	border-bottom: 1px solid rgba(210, 179, 135, 0.6);
+	overflow: hidden;
 	z-index: 500;
 }
 
@@ -327,6 +341,21 @@ div.ping {
 	line-height: 0;
 }
 
+#me-menu {
+	display: inline-block;
+	/*position: absolute;*/
+	background: #FFB671 url("../image/menu.png") no-repeat 6px 10px;
+	height: 3em;
+	width: 3em;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: top;
+	border-radius: 1.5em;
+	margin-left: 0.6em;
+	z-index: 10000;
+}
+
 .port nav a {
 	display: none;
 	text-decoration:  none;
@@ -334,6 +363,7 @@ div.ping {
 	font-weight: 300;
 	color: #ffffff;
 	line-height: 3em;
+	height: 3em;
 	transition: background-color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 	-webkit-transition: background-color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000)	
 }
@@ -353,6 +383,8 @@ nav a.active + a, nav a.previous {
 	background-color: #ffffff;
 	color: #c2ca9a;
 }
+
+/* <<<<<<<< Projects >>>>>>>> */
 
 #project0 {
 	margin-top: 6.5em;
@@ -644,8 +676,8 @@ form input:focus, form textarea:focus {
 	}
 	
 	#profile {
+		display: flex;
 		width: 22%;
-		visibility: visible;
 	}
 
 	.intro p:last-child {
@@ -654,6 +686,10 @@ form input:focus, form textarea:focus {
 
 	#portfolio, footer, .port nav, .resume {
 		width: 78%;
+	}
+
+	#me-menu {
+		display: none;
 	}
 
 	.port nav a {
