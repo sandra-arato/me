@@ -179,7 +179,9 @@ p {
 }
 
 .skills div {
+	height: auto;
 	background-image: none;
+	margin-top: 0.6em;
 	margin-left: 1.8em;
 	padding-top: 0;
 	padding-left: 0;
@@ -319,7 +321,7 @@ div.ping {
 
 /* <<<<<<<< Navigation >>>>>>>> */
 
-.port nav {
+nav {
 	position: fixed;
 	float: right;
 	width: 100%;
@@ -356,7 +358,7 @@ div.ping {
 	z-index: 10000;
 }
 
-.port nav a {
+nav a {
 	display: none;
 	text-decoration:  none;
 	padding: 0 1em;
@@ -368,7 +370,7 @@ div.ping {
 	-webkit-transition: background-color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000)	
 }
 
-.port nav a.active{
+nav a.active{
 	background-color: #ffffff;
 	color: #FFB671;
 	border-bottom: 2px solid #FFB671;
@@ -379,7 +381,7 @@ nav a.active + a, nav a.previous {
 	display: inline-block;
 }
 
-.port nav a:hover {
+nav a:hover {
 	background-color: #ffffff;
 	color: #c2ca9a;
 }
@@ -569,12 +571,16 @@ form {
 form h2 {
 	letter-spacing: 1.9px;
 	font-weight: 300;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 form h3 {
 	font-size: 2em;
 	line-height: 1.4em;
 	margin-bottom: 1em;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 form div {
@@ -588,6 +594,11 @@ form div.col1 {
 	margin-top: 1.2em;
 }
 
+form div.col2 {
+	float: right;
+}
+
+
 form div p {
 	display: block;
 	float: left;
@@ -596,15 +607,19 @@ form div p {
 }
 
 form input, form input.clearfix {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	display: block;
 	margin-top: 4px;
-	width: 12.4em;
+	width: 18.4em;
 	height: 2.6em;
 	padding-left: 0.6em;
 	color: #000000;
 }
 
 form textarea {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
 	margin-top: 1.8em;
 	height: 10.4em;
 	width: 100%;
@@ -684,7 +699,7 @@ form input:focus, form textarea:focus {
 		font-size: 1em;
 	}
 
-	#portfolio, footer, .port nav, .resume {
+	#portfolio, footer, nav, .resume {
 		width: 78%;
 	}
 
@@ -692,12 +707,17 @@ form input:focus, form textarea:focus {
 		display: none;
 	}
 
-	.port nav a {
+	nav a {
 		display: inline-block;
 	}
 
-	form div.col1, form div.col2 {
-		width: 45%;
+	form div.col1 {
+		width: 30%;
+		margin: 0 auto;
+	}
+
+	form div.col2 {
+		width: 65%;
 		margin: 0 auto;
 	}
 
