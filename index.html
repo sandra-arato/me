@@ -6,7 +6,7 @@
 		<link href="css/normalize.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 	</head>
-	<body class="clearfix">
+	<body>
 		<div id="profile">
 			<div class="intro">
 				<div>This is my portfolio.</div>
@@ -20,54 +20,47 @@
 				<div class="html">HTML</div>
 				<div class="css">CSS</div>
 				<div class="js">JavaScript</div>
-				<h2>tools I use</h2>
-				<p>JQuery - Facebook API - Google Maps - Google Docs APIs - Bootstrap</p>
 				<h2>interning</h2>
 				<p>I'm looking for an awesome place, where I can grow my skills and help out a busy team. If you know a company that would benefit of an intern like me, let me know.</p>
 			</div>
 			<div class="ping"><span>email me</span></div>
 		</div>
-		<!-- <div id="timeline">
-			<div>Check out my past</div>
-			<span class="stretch"></span>
-			<div class="line"></div>
-			<div>Be my future</div>
-		</div> -->
 		<div id="portfolio" class="main-content small-hidden" class="port clearfix">
 			<nav>
-				<div id="me-menu">About me</div>
 				<a href="#project0">Infinity Gallery</a>
 				<a href="#project1">Friendlocator</a>
-				<a href="#project2">Daily Odd Compliments</a>
-				<a href="#project3">SPAR 2014</a>
-				<a href="#project4">Condo Kings</a>
+				<a href="#project2">Condo Kings</a>
+				<a href="#project3">Daily Odd Compliments</a>
+				<a href="#project4">SPAR 2014</a>
 				<a href="#project5">Blaah</a>
 				<a href="#project6">BusyBees</a>
 				<a href="#project7" class="last">Protofolio</a>
 				<span class="stretch"></span>
 			</nav>
 		</div>
-		<div class="clearfix resume">
+		<div class="resume">
 			<h3>Here is my resume</h3>
-			<div class="col1">
-				<p>
-					Caramels muffin cotton candy applicake pudding. Soufflé applicake icing. Chocolate powder sweet roll soufflé cheesecake caramels. Jelly-o tart icing chupa chups gummies dessert chocolate cake powder. Gingerbread icing pie. Sesame snaps cupcake cake liquorice soufflé marshmallow chocolate. Sweet roll chupa chups halvah. Tiramisu cotton candy jelly.
-				</p>
-				<p>
-					Icing sugar plum I love sugar plum gingerbread ice cream oat cake lemon drops biscuit. Jelly-o toffee I love jelly lollipop I love pie. Ice cream tart dragée bear claw.
+			<div class="clearfix">
+				<div class="col1">
+					<p>
+						Caramels muffin cotton candy applicake pudding. Soufflé applicake icing. Chocolate powder sweet roll soufflé cheesecake caramels. Jelly-o tart icing chupa chups gummies dessert chocolate cake powder. Gingerbread icing pie. Sesame snaps cupcake cake liquorice soufflé marshmallow chocolate. Sweet roll chupa chups halvah. Tiramisu cotton candy jelly.
+					</p>
+					<p>
+						Icing sugar plum I love sugar plum gingerbread ice cream oat cake lemon drops biscuit. Jelly-o toffee I love jelly lollipop I love pie. Ice cream tart dragée bear claw.
 
-				</p>
-			</div>
-			<div class="col2">
-				<ul>
-					<li>jelly beans</li>
-					<li>cookie moster</li>
-					<li>chocolate fondue</li>
-					<li>strawberry jam</li>
-				</ul>
-				<p>
-					Pudding cheesecake cheesecake pudding pudding gummies dragée marshmallow. Apple pie gingerbread soufflé sweet brownie sugar plum croissant wafer. Croissant liquorice sweet carrot cake chocolate. Ice cream marshmallow soufflé oat cake liquorice sweet roll marshmallow. Cotton candy powder cheesecake pudding unerdwear.com jujubes jelly beans cheesecake powder.
-				</p>
+					</p>
+				</div>
+				<div class="col2">
+					<ul>
+						<li>jelly beans</li>
+						<li>cookie moster</li>
+						<li>chocolate fondue</li>
+						<li>strawberry jam</li>
+					</ul>
+					<p>
+						Pudding cheesecake cheesecake pudding pudding gummies dragée marshmallow. Apple pie gingerbread soufflé sweet brownie sugar plum croissant wafer. Croissant liquorice sweet carrot cake chocolate. Ice cream marshmallow soufflé oat cake liquorice sweet roll marshmallow. Cotton candy powder cheesecake pudding unerdwear.com jujubes jelly beans cheesecake powder.
+					</p>
+				</div>
 			</div>
 		</div>
 		<footer>
@@ -78,11 +71,14 @@
 				</div>
 				<div>
 					<div class="col1">
-						<p>Your name is <input type="text" name="sender" required="required"></p>
-						<p>Your email is <input type="email" name="email" required="required"></p>
-						<p>Phone number <input class="clearfix" type="text" name="sender" placeholder="optional but useful"></p>
+						<label for="sender">Your name is</label>
+						<input type="text" id="sender" name="sender" required="required">
+						<label for="email">Your email is</label>
+						<input type="email" id="email" name="email" required="required">
+						<label for="phone">Phone number</label>
+						<input class="clearfix" type="text" id="phone" name="phone" placeholder="optional but useful">
 					</div>
-					<div class="col2 clearfix">
+					<div class="col2">
 						<textarea name="message" placeholder="text me"></textarea>
 					</div>
 					<input id="send-mail" type="submit" value="send">

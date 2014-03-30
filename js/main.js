@@ -3,66 +3,66 @@
 	var projects = [
 	{
 		title: "Infinity Gallery",
-		description: "The page gathers the best 75 shots from last year, and shows where it was taken. The styled Google Map on the left updates for each photo, based on the visibility of the current photo. The geoloaction is pulled from a JSON that was generated for the photos. I also used a lazy loading library because the desired photo sizes made the page load a bit slow. Upgrade ideas include sharing individual photos via Facebook or bookmarking the position of the current photo.",
-		url: "http://sandraszenti.github.io/friendlocator",
+		description: "It's a gallery for 2013's best shots, and shows on a map where it was taken. I also used a lazy loading library because the desired photo sizes made the page load a bit slow. Upgrade ideas include sharing individual photos via Facebook or bookmarking the position of the current photo.",
+		url: "https://github.com/sandraszenti/infinity-gallery",
 		code: [23, 193, 43],
-		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
+		keywords: ["Google Maps", "IE8", "Lazy loading", "Responsive"],
 		screenshot: "image/infinity.png"
 	},
 	{
 		title: "Friendlocator",
-		description: "Marshmallow dragée chupa chups dessert bear claw. Tiramisu brownie apple pie caramels dragée pie gummi bears soufflé. Gummi bears icing fruitcake oat cake biscuit halvah.",
-		url: "http://sandraszenti.github.io/friendlocator",
+		description: "The website collects the users Facebook friends around the world and displays them with markers. The map is positioned based on the user's current location, and when the user click a marker, the photos and names of friends in that city pop up in an info container.",
+		url: "hhttps://github.com/sandraszenti/friendlocator",
 		code: [56, 130, 213],
 		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
 		screenshot: "image/friendlocator.png"
 	},
 	{
+		title: "Condo Kings",
+		description: "A simple one page site building based on a free desing provided by New York based Hezy Team - the PSD can be downloaded from their Behance profile. I added smooth scrolling and a vertically sliced menu - start scrolling the page slowly from the top to see it working.",
+		url: "https://github.com/sandraszenti/condo-kings",
+		code: [248, 170, 129],
+		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
+		screenshot: "image/condo.png"
+	},
+	{
 		title: "Daily Odd Compliments",
-		description: "Cheesecake croissant fruitcake soufflé danish pudding powder candy tiramisu. Chocolate macaroon candy canes wafer. Dragée soufflé dessert cookie marzipan jelly gingerbread sweet toffee. Oat cake cake icing icing jelly-o apple pie jelly-o.",
-		url: "http://sandraszenti.github.io/friendlocator",
+		description: "Based on some random quotes from the original tumblr page, the website animates through the given quotes. This project was a practicing excercise to understand slicing animations better. Updating ideas include pulling live data from twitter account and sharing quotes.",
+		url: "https://github.com/sandraszenti/daily-odd-compliments",
 		code: [112, 134, 43],
 		keywords: ["IE8", "Bootstrap", "Responsive"],
 		screenshot: "image/daily.png"
 	},
 	{
 		title: "SPAR 2014",
-		description: "Marshmallow dragée chupa chups dessert bear claw. Tiramisu brownie apple pie caramels dragée pie gummi bears soufflé. Gummi bears icing fruitcake oat cake biscuit halvah.",
-		url: "http://sandraszenti.github.io/friendlocator",
+		description: "The site is dedicated SPAR 2014 conference, that gathers professionals aorund the world from the 3D scanning indusrty. The map's markers represent the exhibitors of the show, their name and contact info is displayed on click. The information is pulled from a Google Speadsheet.",
+		url: "https://github.com/sandraszenti/spar2014",
 		code: [56, 70, 83],
-		keywords: ["google maps", "IE8", "Responsive"],
+		keywords: ["Google Maps", "Google Spreadsheet"],
 		screenshot: "image/spar.png"
 	},
 	{
-		title: "Condo Kings",
-		description: "Cupcake ipsum dolor. Sit amet jelly beans bonbon soufflé. Apple pie icing macaroon unerdwear.com cheesecake soufflé wafer.",
-		url: "http://sandraszenti.github.io/friendlocator",
-		code: [248, 170, 129],
-		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
-		screenshot: "image/condo.png"
-	},
-	{
 		title: "Blaah",
-		description: "Gummi bears icing fruitcake oat cake biscuit halvah. Carrot cake chocolate jelly sweet roll soufflé brownie cupcake.",
-		url: "http://sandraszenti.github.io/friendlocator",
+		description: "A realtime chat room based on Node.JS, setted up on a Heroku webserver. The aim of this project was to learn about NodeJS and getting a bit more familiar with backend terms. Updating this project will mostly focus on functionality and a more effective code, and a bit of styling.",
+		url: "https://github.com/sandraszenti/blaah",
 		code: [72, 250, 312],
-		keywords: ["Node JS", "heroku", "Bootstrap", "Responsive"],
+		keywords: ["Node JS", "Heroku", "JavaScript"],
 		screenshot: "image/blaah.png"
 	},
 	{
 		title: "BusyBees",
-		description: "Cupcake cotton candy halvah danish icing sweet sesame snaps. Carrot cake dragée jelly topping lemon drops bear claw sugar plum sweet roll.",
-		url: "http://sandraszenti.github.io/friendlocator",
+		description: "The final project of my General Assembly - Intro to Front End Web Development class. The site is an informational website for a new employee of an imaginary company, it introduces the user to his/her new collegues, company history and the workspace.",
+		url: "https://github.com/sandraszenti/gafewd",
 		code: [232, 131, 82],
-		keywords: ["google maps", "IE8", "Responsive"],
+		keywords: ["JSON", "IE8", "Responsive"],
 		screenshot: "image/busy.png"
 	},
 	{
 		title: "Protofolio",
-		description: "Cheesecake croissant fruitcake soufflé danish pudding powder candy tiramisu. Chocolate macaroon candy canes wafer. Dragée soufflé dessert cookie marzipan jelly gingerbread sweet toffee. Oat cake cake icing icing jelly-o apple pie jelly-o.",
-		url: "http://sandraszenti.github.io/friendlocator",
+		description: "I started building this site for a friend, as an optional portfolio. I used Bootstrap to secure mobile respnsiveness and Masonry to fix grid problems. I used handlebars for creating the project templates, and JavaScript to add project thumbnails a caroussel functionality on hover.",
+		url: "https://github.com/sandraszenti/petikeprivate",
 		code: [432, 231, 123],
-		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
+		keywords: ["Bootstrap", "Responsive", "Masonry"],
 		screenshot: "image/protofolio.png"
 	}
 	]
@@ -207,22 +207,6 @@
 		activateProjectNav(maxIndex);
 	}
 
-	// I might use this function later to see if flex-box profile elements are not blocking eachother out
-	function checkOverflow(el) {
-
-		var curOverflow = el.style.overflow;
-
-		if ( !curOverflow || curOverflow === "visible" ) {
-			el.style.overflow = "hidden";
-		}
-
-		var isOverflowing = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
-		console.log("el.clientHeight", el.clientHeight, "el.scrollHeight", el.scrollHeight);
-		el.style.overflow = curOverflow;
-		return isOverflowing;
-	}
-
-
 	function handleScrollEvents () {
 		$(window).scroll(scrollHandler);
 		smoothScroll();
@@ -250,7 +234,9 @@
 
 
 			var desc = document.createElement("div");
-			$(desc).html("<h3>" + projects[i].title + "</h3><p>" + projects[i].description + "</p>").addClass("description");	
+			$(desc)
+				.html("<a href='http://sandraszenti.github.io/" + projects[i].url.split("/")[3] + "'></a><h3>" + projects[i].title + "</h3><p>" + projects[i].description + "</p>")
+				.addClass("description");	
 
 
 			var summ = document.createElement("div");
@@ -287,12 +273,14 @@
 		console.log("hello");
 
 		// setup Github stickers on projects
-		Sticker.init(".project a");
+		Sticker.init(".project a.sticker");
 
 		// display text above Github sticker on hover
 		$(".project a").hover(
 			function() {$(this).next().css("visibility", "visible");}, 
-			function() {$(this).next().css("visibility", "hidden");});
+			function() {$(this).next().css("visibility", "hidden");}
+		);
+		
 		handleScrollEvents();
 
 		// when email me button is clicked, it scrolls to the form 
@@ -301,7 +289,7 @@
 			e.preventDefault();
 		});
 
-		$("#me-menu").click(animateMenuButton);
+		// $("#me-menu").click(animateMenuButton);
 	}
 // }();
 
