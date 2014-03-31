@@ -5,7 +5,7 @@
 		title: "Infinity Gallery",
 		description: "It's a gallery for 2013's best shots, and shows on a map where it was taken. I also used a lazy loading library because the desired photo sizes made the page load a bit slow. Upgrade ideas include sharing individual photos via Facebook or bookmarking the position of the current photo.",
 		url: "https://github.com/sandraszenti/infinity-gallery",
-		code: [23, 193, 43],
+		code: [330, 618, 44],
 		keywords: ["Google Maps", "IE8", "Lazy loading", "Responsive"],
 		screenshot: "image/infinity.png"
 	},
@@ -13,7 +13,7 @@
 		title: "Friendlocator",
 		description: "The website collects the users Facebook friends around the world and displays them with markers. The map is positioned based on the user's current location, and when the user click a marker, the photos and names of friends in that city pop up in an info container.",
 		url: "hhttps://github.com/sandraszenti/friendlocator",
-		code: [56, 130, 213],
+		code: [56, 1685, 162], // check later
 		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
 		screenshot: "image/friendlocator.png"
 	},
@@ -21,7 +21,7 @@
 		title: "Condo Kings",
 		description: "A simple one page site building based on a free desing provided by New York based Hezy Team - the PSD can be downloaded from their Behance profile. I added smooth scrolling and a vertically sliced menu - start scrolling the page slowly from the top to see it working.",
 		url: "https://github.com/sandraszenti/condo-kings",
-		code: [248, 170, 129],
+		code: [56, 1685, 162],
 		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
 		screenshot: "image/condo.png"
 	},
@@ -29,7 +29,7 @@
 		title: "Daily Odd Compliments",
 		description: "Based on some random quotes from the original tumblr page, the website animates through the given quotes. This project was a practicing excercise to understand slicing animations better. Updating ideas include pulling live data from twitter account and sharing quotes.",
 		url: "https://github.com/sandraszenti/daily-odd-compliments",
-		code: [112, 134, 43],
+		code: [239, 530, 21],
 		keywords: ["IE8", "Bootstrap", "Responsive"],
 		screenshot: "image/daily.png"
 	},
@@ -37,7 +37,7 @@
 		title: "SPAR 2014",
 		description: "The site is dedicated SPAR 2014 conference, that gathers professionals aorund the world from the 3D scanning indusrty. The map's markers represent the exhibitors of the show, their name and contact info is displayed on click. The information is pulled from a Google Speadsheet.",
 		url: "https://github.com/sandraszenti/spar2014",
-		code: [56, 70, 83],
+		code: [160, 564, 30],
 		keywords: ["Google Maps", "Google Spreadsheet"],
 		screenshot: "image/spar.png"
 	},
@@ -45,7 +45,7 @@
 		title: "Blaah",
 		description: "A realtime chat room based on Node.JS, setted up on a Heroku webserver. The aim of this project was to learn about NodeJS and getting a bit more familiar with backend terms. Updating this project will mostly focus on functionality and a more effective code, and a bit of styling.",
 		url: "https://github.com/sandraszenti/blaah",
-		code: [72, 250, 312],
+		code: [72, 2530, 312], //check later
 		keywords: ["Node JS", "Heroku", "JavaScript"],
 		screenshot: "image/blaah.png"
 	},
@@ -53,7 +53,7 @@
 		title: "BusyBees",
 		description: "The final project of my General Assembly - Intro to Front End Web Development class. The site is an informational website for a new employee of an imaginary company, it introduces the user to his/her new collegues, company history and the workspace.",
 		url: "https://github.com/sandraszenti/gafewd",
-		code: [232, 131, 82],
+		code: [32, 1331, 82], // check later
 		keywords: ["JSON", "IE8", "Responsive"],
 		screenshot: "image/busy.png"
 	},
@@ -61,11 +61,76 @@
 		title: "Protofolio",
 		description: "I started building this site for a friend, as an optional portfolio. I used Bootstrap to secure mobile respnsiveness and Masonry to fix grid problems. I used handlebars for creating the project templates, and JavaScript to add project thumbnails a caroussel functionality on hover.",
 		url: "https://github.com/sandraszenti/petikeprivate",
-		code: [432, 231, 123],
+		code: [2555, 226, 297],
 		keywords: ["Bootstrap", "Responsive", "Masonry"],
 		screenshot: "image/protofolio.png"
 	}
 	]
+
+	function createChart () {
+		var lineCountChart = {
+			html: 0,
+			css: 0,
+			js: 0,
+			api: 0
+		}
+		for (var i = 0, len = projects.length; i < len; i++) {
+			lineCountChart.html += projects[i].code[2];
+			lineCountChart.css += projects[i].code[1];
+			lineCountChart.js += projects[i].code[0] * 0.9;
+			lineCountChart.api += projects[i].code[0] * 0.1;
+		};
+
+		console.log("lines");
+		console.log(lineCountChart);
+
+		var data = [
+				{name: "HTML", val: lineCountChart.html},  
+				{name: "CSS", val: lineCountChart.css}, 
+				{name: "JS", val: lineCountChart.js},
+				{name: "APIs", val: lineCountChart.api}
+			];
+		var color = ["#66a2ad", "#ffb671", "#b998f5", "#cefb6f"];
+		var w = 180,
+			h = 210,
+			r = w / 2,
+			labelr = r + 14, // radius for label anchor
+			donut = d3.layout.pie(),
+			arc = d3.svg.arc().innerRadius(r * .43).outerRadius(r);
+
+			var vis = d3.select("div#chart")
+				.append("svg:svg")
+				.data([data])
+				.attr("width", w + 80)
+				.attr("height", h);
+
+			var arcs = vis.selectAll("g.arc")
+				.data(donut.value(function(d) { return d.val }))
+				.enter().append("svg:g")
+				.attr("class", "arc")
+				.attr("transform", "translate(" + (r + 30) + "," + (r + 20) + ")");
+
+			arcs.append("svg:path")
+				.attr("fill", function(d, i) { return color[i]; })
+				.attr("d", arc);
+			
+			arcs.append("svg:text")
+				.attr("transform", function(d) {
+						var c = arc.centroid(d),
+						x = c[0],
+						y = c[1],
+						// pythagorean theorem for hypotenuse
+						h = Math.sqrt(x*x + y*y);
+						return "translate(" + (x/h * labelr) +  ',' + (y/h * labelr) +  ")"; 
+					})
+				.attr("dy", ".35em")
+				.attr("fill", function(d, i) { return color[i]; })
+				.attr("text-anchor", function(d) {
+					// are we past the center?
+					return (d.endAngle + d.startAngle)/2 > Math.PI ? "end" : "start";
+					})
+				.text(function(d, i) { return data[i].name; });  
+	}
 
 	function animateMenuButton () {
 
@@ -240,6 +305,13 @@
 
 
 			var summ = document.createElement("div");
+
+			var keywords = "<div class='tags'><span>Keywords</span><ul>";
+			for (var k = 0, len2 = projects[i].keywords.length; k < len2; k++) {
+				keywords += "<li>" + projects[i].keywords[k] + "</li>";
+			};
+			keywords += "</ul></div>";
+
 			var sumtext = (
 				"<div class='codecount'> \
 					<span>line counter</span> \
@@ -250,16 +322,10 @@
 					</ul> \
 				</div> \
 				<div class='tags'> \
-					<span>Keywords</span> \
-					<ul> \
-						<li>Google Maps</li> \
-						<li>Lazy loading</li> \
-						<li>Responsive</li> \
-						<li>IE8+</li> \
-						<li class='stretch'></li> \
-					</ul> \
 				</div>");
-			$(summ).html(sumtext).addClass("summary");
+			$(summ).html(sumtext + keywords).addClass("summary");
+
+
 
 			$([img, gitLink, gitLinkAfter, desc, summ]).appendTo($(projectDiv));
 			$(projectDiv).appendTo($("#portfolio"));
@@ -270,6 +336,7 @@
 	function initialize() {
 		// fill index.html with portfolio projects
 		renderProjects();
+		createChart();
 		console.log("hello");
 
 		// setup Github stickers on projects
