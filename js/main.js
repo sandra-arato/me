@@ -90,9 +90,9 @@
 				{name: "JS", val: lineCountChart.js},
 				{name: "APIs", val: lineCountChart.api}
 			];
-		var color = ["#66a2ad", "#ffb671", "#b998f5", "#cefb6f"];
-		var w = 180,
-			h = 210,
+		var color = ["#66a2ad", "#ffb671", "#b998f5", "#e77d69"];
+		var w = 160,
+			h = 180,
 			r = w / 2,
 			labelr = r + 14, // radius for label anchor
 			donut = d3.layout.pie(),
@@ -300,7 +300,7 @@
 
 			var desc = document.createElement("div");
 			$(desc)
-				.html("<a href='http://sandraszenti.github.io/" + projects[i].url.split("/")[3] + "'></a><h3>" + projects[i].title + "</h3><p>" + projects[i].description + "</p>")
+				.html("<h3>" + projects[i].title + "</h3>" + "<span><a href='http://sandraszenti.github.io/" + projects[i].url.split("/")[4]  + "'>" + "click to view project site" + "</a></span>" + "<p>" + projects[i].description + "</p>")
 				.addClass("description");	
 
 
