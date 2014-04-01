@@ -818,6 +818,7 @@ form input:focus, form textarea:focus {
 	form div.col2 {
 		display: inline-block;
 		width: 59%;
-		min-width: 
+		vertical-align: top;
+		padding-top: 1.7em;
 	}
 }
