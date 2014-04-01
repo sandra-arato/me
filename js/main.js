@@ -90,7 +90,8 @@
 				{name: "JS", val: lineCountChart.js},
 				{name: "APIs", val: lineCountChart.api}
 			];
-		var color = ["#66a2ad", "#ffb671", "#b998f5", "#e77d69"];
+		var color = ["#e45025", "#0c73b7", "#e4a229", "#35b334"];
+		// var color = ["#e45025", "#56C0E4", "#a3bc6d", "#856eb0"];
 		var w = 160,
 			h = 180,
 			r = w / 2,
