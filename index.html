@@ -2,15 +2,28 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Portfolio of Sandra Szenti</title>
+		<title>Sandra Szenti's Portfolio</title>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link href="css/normalize.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
+
+		<script type="text/javascript" async="" src="//www.google-analytics.com/ga.js"></script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-49585832-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
 	</head>
 	<body>
 		<div class="mobile-nav">
-			<a href="#profile" id="up">Jump to Start</a>
-			<a href="#resume" id="down">Jump to End</a>
+			<a href="#profile" id="up" onclick="_gaq.push(['_trackEvent','Portfolio','Mobile nav up']);">Jump to Start</a>
+			<a href="#resume" id="down" onclick="_gaq.push(['_trackEvent','Portfolio','Mobile nav down']);">Jump to End</a>
 		</div>
 		<div id="profile">
 			<div class="intro">
@@ -23,11 +36,11 @@
 			<div class="skills">
 				<h2>main skills</h2>
 				<div id="chart"></div>
-				<a href="#resume">view all skills</a>
+				<a href="#resume" onclick="_gaq.push(['_trackEvent','Profile','View all skills']);">view all skills</a>
 				<h2>interning</h2>
 				<p>I'm looking for an awesome place, where I can grow my skills and help out a busy team. If you know a company that would benefit of an intern like me, let me know.</p>
 			</div>
-			<div class="ping"><span>email me</span></div>
+			<div class="ping"><span onclick="_gaq.push(['_trackEvent','Profile','Email me']);">email me</span></div>
 		</div>
 		<div id="portfolio" class="main-content small-hidden" class="port clearfix">
 			<nav>
@@ -108,7 +121,7 @@
 						</span>
 					</div>
 					<p>Keywords</p>
-					<p>PSD slicing, site building, Bootstrap, Google Analytics</p>
+					<p>PSD slicing, site building, Bootstrap, Google Analytics, Forms</p>
 					<div>
 						<span>CSS</span>
 						<span>
@@ -142,7 +155,7 @@
 						</span>
 					</div>
 					<p>Keywords</p>
-					<p>JQuery, NodeJS, Handlebars, Lazy Loading, Masonry, Ajax calls, D3, SVG</p>
+					<p>JQuery, NodeJS, Handlebars, Lazy Loading, Masonry, Ajax calls, D3, SVG, Form validation</p>
 					<div>
 						<span>APIs</span>
 						<span>
@@ -229,7 +242,7 @@
 					<div class="col2">
 						<textarea name="message" placeholder="text me"></textarea>
 					</div>
-					<input id="send-mail" type="submit" value="send">
+					<input id="send-mail" type="submit" value="send" onclick="_gaq.push(['_trackEvent','Form','Form submit button']);">
 				</div>
 			</form>
 		</footer>
