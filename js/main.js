@@ -357,7 +357,6 @@
 			e.preventDefault();
 		});
 
-		// $("#me-menu").click(animateMenuButton);
 	}
 // }();
 
