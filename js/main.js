@@ -2,11 +2,11 @@
 
 	var projects = [
 	{
-		title: "Infinity Gallery",
+		title: "2013 Was Awesome",
 		description: "It's a gallery for 2013's best shots, and shows on a map where it was taken. I also used a lazy loading library because the desired photo sizes made the page load a bit slow. Upgrade ideas include sharing individual photos via Facebook or bookmarking the position of the current photo.",
 		url: "https://github.com/sandraszenti/infinity-gallery",
 		code: [330, 618, 44],
-		keywords: ["Google Maps", "IE8", "Lazy loading", "Responsive"],
+		keywords: ["HTML5", "CSS3", "Javascript", "JQuery", "Google Maps", "Map styling", "IE8", "Lazy loading", "Responsive"],
 		screenshot: "image/infinity.png"
 	},
 	{
@@ -14,7 +14,7 @@
 		description: "The website collects the users Facebook friends around the world and displays them with markers. The map is positioned based on the user's current location, and when the user click a marker, the photos and names of friends in that city pop up in an info container.",
 		url: "hhttps://github.com/sandraszenti/friendlocator",
 		code: [56, 1685, 162], // check later
-		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
+		keywords: ["FQL", "Facebook API", "Multi-queries", "Map styling", "Google Maps", "IE8", "Bootstrap", "Responsive"],
 		screenshot: "image/friendlocator.png"
 	},
 	{
@@ -22,7 +22,7 @@
 		description: "A simple one page site building based on a free desing provided by New York based Hezy Team - the PSD can be downloaded from their Behance profile. I added smooth scrolling and a vertically sliced menu - start scrolling the page slowly from the top to see it working.",
 		url: "https://github.com/sandraszenti/condo-kings",
 		code: [56, 1685, 162],
-		keywords: ["google maps", "IE8", "Bootstrap", "Responsive"],
+		keywords: ["PSD slicing", "HTML5", "CSS3", "Javascript", "JQuery"],
 		screenshot: "image/condo.png"
 	},
 	{
@@ -30,23 +30,31 @@
 		description: "Based on some random quotes from the original tumblr page, the website animates through the given quotes. This project was a practicing excercise to understand slicing animations better. Updating ideas include pulling live data from twitter account and sharing quotes.",
 		url: "https://github.com/sandraszenti/daily-odd-compliments",
 		code: [239, 530, 21],
-		keywords: ["IE8", "Bootstrap", "Responsive"],
+		keywords: ["HTML5", "CSS3", "Javascript", "JQuery", "CSS Background Patterns", "Google Fonts"],
 		screenshot: "image/daily.png"
 	},
 	{
 		title: "SPAR 2014",
-		description: "The site is dedicated SPAR 2014 conference, that gathers professionals aorund the world from the 3D scanning indusrty. The map's markers represent the exhibitors of the show, their name and contact info is displayed on click. The information is pulled from a Google Speadsheet.",
+		description: "The site is dedicated SPAR 2014 conference, that gathers professionals around the world from the 3D scanning industry. The map's markers represent the exhibitors of the show, their name and contact info is displayed on click. The information is pulled from a Google Speadsheet.",
 		url: "https://github.com/sandraszenti/spar2014",
 		code: [160, 564, 30],
-		keywords: ["Google Maps", "Google Spreadsheet"],
+		keywords: ["Google Maps", "Google Spreadsheet", "HTML5", "CSS3", "Javascript", "JQuery", "JSON"],
 		screenshot: "image/spar.png"
+	},
+	{
+		title: "Protofolio",
+		description: "I started building this site for a friend, as an optional portfolio. I used Bootstrap to secure mobile respnsiveness and Masonry to fix grid problems. I used handlebars for creating the project templates, and JavaScript to add project thumbnails a caroussel functionality on hover.",
+		url: "https://github.com/sandraszenti/petikeprivate",
+		code: [2555, 226, 297],
+		keywords: ["HTML5", "CSS3", "Javascript", "JQuery", "caroussel", "Handlebars", "Bootstrap", "Responsive", "Masonry"],
+		screenshot: "image/protofolio.png"
 	},
 	{
 		title: "Blaah",
 		description: "A realtime chat room based on Node.JS, setted up on a Heroku webserver. The aim of this project was to learn about NodeJS and getting a bit more familiar with backend terms. Updating this project will mostly focus on functionality and a more effective code, and a bit of styling.",
 		url: "https://github.com/sandraszenti/blaah",
 		code: [72, 2530, 312], //check later
-		keywords: ["Node JS", "Heroku", "JavaScript"],
+		keywords: ["Node JS", "Heroku", "JavaScript", "HTML5", "CSS3", "JQuery"],
 		screenshot: "image/blaah.png"
 	},
 	{
@@ -54,16 +62,8 @@
 		description: "The final project of my General Assembly - Intro to Front End Web Development class. The site is an informational website for a new employee of an imaginary company, it introduces the user to his/her new collegues, company history and the workspace.",
 		url: "https://github.com/sandraszenti/gafewd",
 		code: [32, 1331, 82], // check later
-		keywords: ["JSON", "IE8", "Responsive"],
+		keywords: ["HTML5", "CSS3", "Javascript", "JQuery", "Animations"],
 		screenshot: "image/busy.png"
-	},
-	{
-		title: "Protofolio",
-		description: "I started building this site for a friend, as an optional portfolio. I used Bootstrap to secure mobile respnsiveness and Masonry to fix grid problems. I used handlebars for creating the project templates, and JavaScript to add project thumbnails a caroussel functionality on hover.",
-		url: "https://github.com/sandraszenti/petikeprivate",
-		code: [2555, 226, 297],
-		keywords: ["Bootstrap", "Responsive", "Masonry"],
-		screenshot: "image/protofolio.png"
 	}
 	]
 
@@ -81,8 +81,8 @@
 			lineCountChart.api += projects[i].code[0] * 0.1;
 		};
 
-		console.log("lines");
-		console.log(lineCountChart);
+		// console.log("lines");
+		// console.log(lineCountChart);
 
 		var data = [
 				{name: "HTML", val: lineCountChart.html},  
@@ -137,7 +137,7 @@
 
 
 		if ($("#profile").css("display") === "none") {
-			console.log("showing");
+			// console.log("showing");
 			$("#profile").css("display", "flex");
 			$("#profile").animate({
 				"width": "240px",
@@ -294,16 +294,34 @@
 			$(img).attr("src", projects[i].screenshot).css("width", "100%");
 
 			var gitLink = document.createElement("a");
-			$(gitLink).attr("href", projects[i].url).addClass("sticker");
+			$(gitLink).attr({
+				"href": projects[i].url,
+				"class": "sticker",
+				"target": "_blank",
+				"onclick": "ga('send', 'event', 'Leave Portfolio', 'GitHub', '" + projects[i].title + "');"
+			});
 			var gitLinkAfter = document.createElement("span")
 			$(gitLinkAfter).html("view source on GitHub");
 
 
 			var desc = document.createElement("div");
-			$(desc)
-				.html("<h3>" + projects[i].title + "</h3>" + "<span><a href='http://sandraszenti.github.io/" + projects[i].url.split("/")[4]  + "'>" + "click to view project site" + "</a></span>" + "<p>" + projects[i].description + "</p>")
-				.addClass("description");	
-
+			var projectTitle = document.createElement("h3");
+			$(projectTitle).html(projects[i].title).appendTo($(desc));
+			$(desc).addClass("description");
+				
+			if ( i < projects.length - 2 ) {
+				var projectLink = document.createElement("a");
+				$(projectLink)
+					.html("click to view project site")
+					.attr({
+						"href": "http://sandraszenti.github.io/" + projects[i].url.split("/")[4],
+						"target": "_blank",
+						"onclick": "ga('send', 'event', 'Leave Portfolio', 'Project Site', '" + projects[i].title + "');"
+					});
+				$(projectLink).appendTo($(desc));
+			};
+			var projectDescription = document.createElement("p");
+			$(projectDescription).html(projects[i].description).appendTo($(desc));
 
 			var summ = document.createElement("div");
 
@@ -337,16 +355,16 @@
 	function initialize() {
 		// fill index.html with portfolio projects
 		renderProjects();
+		$("#profile").css("min-height", $(window).height());
 		createChart();
-		console.log("hello");
 
 		// setup Github stickers on projects
 		Sticker.init(".project a.sticker");
 
 		// display text above Github sticker on hover
 		$(".project a").hover(
-			function() {$(this).next().css("visibility", "visible");}, 
-			function() {$(this).next().css("visibility", "hidden");}
+			function() {$(this).next("span").css("visibility", "visible");}, 
+			function() {$(this).next("span").css("visibility", "hidden");}
 		);
 		
 		handleScrollEvents();
