@@ -12,7 +12,7 @@
 	{
 		title: "Friendlocator",
 		description: "The website collects the users Facebook friends around the world and displays them with markers. The map is positioned based on the user's current location, and when the user click a marker, the photos and names of friends in that city pop up in an info container.",
-		url: "hhttps://github.com/sandraszenti/friendlocator",
+		url: "https://github.com/sandraszenti/friendlocator",
 		code: [56, 1685, 162], // check later
 		keywords: ["FQL", "Facebook API", "Multi-queries", "Map styling", "Google Maps", "IE8", "Bootstrap", "Responsive"],
 		screenshot: "image/friendlocator.png"
@@ -276,7 +276,7 @@
 	function handleScrollEvents () {
 		$(window).scroll(scrollHandler);
 		smoothScroll();
-		$(document).keydown(function (e) { keyboardNav(e); } );
+		// $(document).keydown(function (e) { keyboardNav(e); } );
 	}
 
 	function renderProjects() {
