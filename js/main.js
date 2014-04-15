@@ -4,15 +4,15 @@ var projects = [
 	title: "UV printer",
 	description: "Promotional website for introducing a new product in the digital printing market. Design, site building and analytics administration. I used Google Spreadsheets to register event attendees. I added Analytics tracking events and Facebook tracking pixel to help the marketing team.",
 	url: "http://www.uvprinter.hu",
-	code: [330, 618, 44],
+	code: [218, 1099, 932],
 	keywords: ["HTML5", "CSS3", "Javascript", "JQuery", "Google Maps", "Mobile first", "Responsive", "Form validation", "Google Spreadsheets", "Event tracking", "Facebook API"],
 	screenshot: "image/uvprinter.png"
 },
 {
-	title: "FHB Lakashitelek",
-	description: "Landing page of FHB Bank's spring campaign about home loans. Design was provided by Mito Creative Agency. During site building, I had to merge to existing sites into one based on the design, and implement it so that it fits to the existing framework and front-end practices of the client.",
+	title: "FHB Lakáshitelek",
+	description: "Landing page of FHB Bank's spring campaign about home loans. Design was provided by Mito Creative Agency. During site building, I had to merge two existing sites into one based on the design, and implement it so that it fits to the existing framework and front-end practices of the client.",
 	url: "http://www.fhb.hu/lakashitelek",
-	code: [330, 618, 44],
+	code: [317, 1020, 404],
 	keywords: ["HTML5", "CSS3", "Javascript", "JQuery", "Form validation", "Bootstrap", "Event tracking", "AJAX call", "Dynamic redirection"],
 	screenshot: "image/fhb.png"
 },
@@ -28,7 +28,7 @@ var projects = [
 	title: "Friendlocator",
 	description: "The website collects the users Facebook friends around the world and displays them with markers. The map is positioned based on the user's current location, and when the user click a marker, the photos and names of friends in that city pop up in an info container.",
 	url: "http://sandraszenti.github.io/friendlocator",
-	code: [56, 1685, 162], // check later
+	code: [56, 88, 162], // check later
 	keywords: ["FQL", "Facebook API", "Multi-queries", "Map styling", "Google Maps", "IE8", "Bootstrap", "Responsive"],
 	screenshot: "image/friendlocator.png"
 },
@@ -36,7 +36,7 @@ var projects = [
 	title: "Condo Kings",
 	description: "A simple one page site building based on a free desing provided by New York based Hezy Team - the PSD can be downloaded from their Behance profile. I added smooth scrolling and a vertically sliced menu - start scrolling the page slowly from the top to see it working.",
 	url: "http://sandraszenti.github.io/condo-kings",
-	code: [56, 1685, 162],
+	code: [56, 373, 162],
 	keywords: ["PSD slicing", "HTML5", "CSS3", "Javascript", "JQuery"],
 	screenshot: "image/condo.png"
 },
@@ -68,7 +68,7 @@ var projects = [
 	title: "Blaah",
 	description: "A realtime chat room based on Node.JS, setted up on a Heroku webserver. The aim of this project was to learn about NodeJS and getting a bit more familiar with backend terms. Updating this project will mostly focus on functionality and a more effective code, and a bit of styling.",
 	url: "http://sandraszenti.github.io/blaah",
-	code: [72, 2530, 312], //check later
+	code: [72, 141, 312], //check later
 	keywords: ["Node JS", "Heroku", "JavaScript", "HTML5", "CSS3", "JQuery"],
 	screenshot: "image/blaah.png",
 	live: false
@@ -77,7 +77,7 @@ var projects = [
 	title: "BusyBees",
 	description: "The final project of my General Assembly - Intro to Front End Web Development class. The site is an informational website for a new employee of an imaginary company, it introduces the user to his/her new collegues, company history and the workspace.",
 	url: "http://sandraszenti.github.io/gafewd",
-	code: [32, 1331, 82], // check later
+	code: [32, 658, 82], // check later
 	keywords: ["HTML5", "CSS3", "Javascript", "JQuery", "Animations"],
 	screenshot: "image/busy.png",
 	live: false
