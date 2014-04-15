@@ -609,7 +609,7 @@ h4 {
 
 #resume .col2 span {
 	display: inline-block;
-	width: auto;
+	width: 288px;
 	line-height: 20px;
 	font-size: 1.6em;
 	color: #ffffff;
@@ -621,7 +621,7 @@ h4 {
 }
 
 #resume .col2 span:first-child {
-	width: 180px;
+	width: 170px;
 }
 
 #resume .col2 div + p {
