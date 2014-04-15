@@ -148,9 +148,8 @@ p {
 	overflow: hidden;
 	text-indent: 100%;
 	white-space: nowrap;
-	background: url("https://scontent-a-fra.xx.fbcdn.net/hphotos-ash3/t1.0-9/1045100_10201061228468080_850063455_n.jpg") no-repeat;
-	background-size: 600px;
-	background-position: -133px -210px;
+	background: url("../image/profile_bg_s.jpg") no-repeat center;
+	/*background-position: -140px -210px;*/
 }
 
 .intro img {
@@ -750,12 +749,28 @@ form input:focus, form textarea:focus {
 	top: 14px;
 	padding: 0.6em 0;
 	color: #ffffff;
-	background-color: #FFB671;
+	background-color: #e4a229;
 	text-transform: uppercase;
 	border: none;
 }
 
+#send-mail:hover {
+	background-color: #e45025;
+}
+
 /* <<<<<<<<<<<<<<< MEDIA QUERIES >>>>>>>>>>>>>>> */
+
+@media (min-width: 530px) {
+	.intro div:first-child {
+		background: url("../image/profile_bg_m.jpg") no-repeat center;
+		/*background-position: 0px -300px;*/
+		height: 260px;
+	}
+	#profile {
+		text-align: center;
+	}
+
+}
 
 @media (min-width:  980px) {
 	#profile {
@@ -764,6 +779,13 @@ form input:focus, form textarea:focus {
 		overflow: auto;
 		position: fixed;
 		z-index: 350;
+		text-align: left;
+	}
+
+	.intro div:first-child {
+		background: url("../image/profile_bg_s.jpg") no-repeat center;
+		/*background-position: -140px -210px;*/
+		height: 130px;
 	}
 
 	#portfolio, #resume, footer {
