@@ -397,14 +397,16 @@ function initialize() {
 		e.preventDefault();
 	});
 
-	// get client ip to customize displayed phone number
+	// geofilter phone number based on client ip
 	$.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
 		$("#resume li.toggleClass").each(function (index) {
-			if (this.attr("countryCode") == data.countryCode) {
-				this.css("display", "list-item");
-				console.log("country code is ", data.countryCode);
+			if (this.getAttribute("countrycode") == data.countryCode) {
+				this.setAttribute("style", "display: list-item");
 			}
 		})
+		if ($("#resume li.toggleClass:hidden").length == $("#resume li.toggleClass").length) {
+			$("#resume li.toggleClass").removeClass("toggleClass");
+		}
 	});
 
 }
