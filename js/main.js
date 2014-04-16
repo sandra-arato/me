@@ -397,6 +397,11 @@ function initialize() {
 		e.preventDefault();
 	});
 
+	// get client ip
+	$.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
+		console.log("response ", data.host)
+	});
+
 }
 
 $(document).ready(initialize);
