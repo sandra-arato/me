@@ -71,6 +71,10 @@ p {
 	display: inline-block;
 }
 
+.toggleClass {
+	display: none;
+}
+
 /* <<<<<<<<<<<<<<< Mobile nav >>>>>>>>>>>>>>> */
 
 .mobile-nav {

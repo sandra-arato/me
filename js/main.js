@@ -397,9 +397,14 @@ function initialize() {
 		e.preventDefault();
 	});
 
-	// get client ip
+	// get client ip to customize displayed phone number
 	$.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
-		console.log("response ", data.host)
+		$("#resume li.toggleClass").each(function (index) {
+			if (this.attr("countryCode") == data.countryCode) {
+				this.css("display", "list-item");
+				console.log("country code is ", data.countryCode);
+			}
+		})
 	});
 
 }
