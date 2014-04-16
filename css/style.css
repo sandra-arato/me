@@ -229,7 +229,7 @@ div.ping {
 	width: 85%;
 	min-height: 40px;
 	line-height: 40px;
-	margin: 0.5em auto;
+	margin: 0.5em auto 2.5em auto;
 	padding: 0.3em 0;
 	text-transform: uppercase;
 	background-color: #4e2699;
@@ -780,7 +780,9 @@ form input:focus, form textarea:focus {
 	#profile {
 		display: block;
 		width: 22%;
-		overflow: auto;
+		height: 100%;
+		overflow-y: auto;
+		overflow-x: hidden; 
 		position: fixed;
 		z-index: 350;
 		text-align: left;

@@ -391,6 +391,15 @@ function initialize() {
 	
 	handleScrollEvents();
 
+	// set profile height
+	// $("#profile").height(Math.floor($(window).height()));
+	// $(window).resize(function () {
+	// 	if ($(window).width > 980) {
+	// 		$("#profile").css("height", "100%");	
+	// 	};
+	// });
+
+
 	// when email me button is clicked, it scrolls to the form 
 	$(".ping span").click(function() {
 		$("html,body").animate({scrollTop:$(document).height()}, 300);
