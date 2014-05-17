@@ -58,8 +58,8 @@ var projects = [
 },
 {
 	title: "Protofolio",
-	description: "I started building this site for a friend, as an optional portfolio. I used Bootstrap to secure mobile respnsiveness and Masonry to fix grid problems. I used handlebars for creating the project templates, and JavaScript to add project thumbnails a caroussel functionality on hover.",
-	url: "http://sandraszenti.github.io/petikeprivate",
+	description: "Portfolio site for which I used Bootstrap to secure mobile respnsiveness and Masonry to fix grid problems. I used handlebars for creating the project templates, and JavaScript to add project thumbnails caroussel. Project on hold.",
+	url: "http://sandraszenti.github.io/protofolio",
 	code: [2555, 226, 297],
 	keywords: ["HTML5", "CSS3", "Javascript", "JQuery", "caroussel", "Handlebars", "Bootstrap", "Responsive", "Masonry"],
 	screenshot: "image/protofolio.png"
@@ -405,19 +405,6 @@ function initialize() {
 		$("html,body").animate({scrollTop:$(document).height()}, 300);
 		e.preventDefault();
 	});
-
-	// geofilter phone number based on client ip
-	$.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
-		$("#resume li.toggleClass").each(function (index) {
-			if (this.getAttribute("countrycode") == data.countryCode) {
-				this.setAttribute("style", "display: list-item");
-			}
-		})
-		if ($("#resume li.toggleClass:hidden").length == $("#resume li.toggleClass").length) {
-			$("#resume li.toggleClass").removeClass("toggleClass");
-		}
-	});
-
 }
 
 $(document).ready(initialize);
